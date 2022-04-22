@@ -35,7 +35,7 @@ else:
 a = df[[0,1]]
 b = df[[0,2]]
 o = df[[0,3]]
-lst = [a,b,c]
+lst = (a,b,c)
 p= df[0]
 for i in lst:
     p = pd.merge(p,i,on = 0, how='outer')
