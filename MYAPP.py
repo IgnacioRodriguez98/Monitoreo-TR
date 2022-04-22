@@ -66,8 +66,7 @@ elif CH4:
     lst.append(f)
 
 else:
-    p="""### No hay gases seleccionados 
-    ### por favor selecciona al menos uno"""
+    p="""### No hay gases seleccionados, por favor selecciona al menos uno"""
 if  len(lst) > 0:
     for i in lst:
         p = pd.merge(p,i,on = 0, how='outer')
