@@ -67,8 +67,9 @@ else:
     p="""### No hay gases seleccionados, por favor selecciona al menos uno"""
 
 for i in lst:
+    glob p
     p = pd.merge(p,i,on = 0, how='outer')
-p.drop([0],inplace=True, axis=1)
+#p.drop([0],inplace=True, axis=1)
 
 st.write(p)
 
