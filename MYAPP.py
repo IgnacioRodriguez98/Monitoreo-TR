@@ -56,4 +56,4 @@ if C2H6 == True:
 if CH4 == True:
     database = database["6"]
 
-st.write(a)
+st.write(b)
