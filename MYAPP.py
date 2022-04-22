@@ -36,37 +36,37 @@ else:
 #   st.write("# Selecciona el tamaño de la ventana:")
 #    vent= st.slider("",1,len(df))
 
-lst = []
+lista = []
 p= df[0]
 
 if C2H2:
     a = df[[0,1]]
-    lst.append(a)
+    lista.append(a)
 
 elif H2:
     b = df[[0,2]]
-    lst.append(b)
+    lista.append(b)
 
 elif C2H4:
     c = df[[0,3]]
-    lst.append(c)
+    lista.append(c)
 
 elif CO:
     d = df[[0,4]]
-    lst.append(d)
+    lista.append(d)
 
 elif C2H6:
     e = df[[0,5]]
-    lst.append(e)
+    lista.append(e)
 
 elif CH4:
     f = df[[0,6]]
-    lst.append(f)
+    lista.append(f)
 
 else:
     p="""### No hay gases seleccionados, por favor selecciona al menos uno"""
 
-for i in lst:
+for i in lista:
     p = pd.merge(p,i,on = 0, how='outer')
 #p.drop([0],inplace=True, axis=1)
 
