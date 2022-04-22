@@ -16,26 +16,6 @@ with st.sidebar:
     C2H6 = st.checkbox("Etano")
     CH4 = st.checkbox("Metano")
 
-if C2H2 == True and (H2,C2H4,CO,C2H6,CH4) == False:
-    database = database["0"]
-elif C2H2 == True and H2 == True:
-    database = database["0","1"]
- 
-if H2 == True:
-    database = database[:,1]
-
-if C2H4 == True:
-    database = database[:,2]
-
-if CO == True:
-    database = database[:,3] 
-
-if C2H6 == True:
-    database = database[:,4]
-
-if CH4 == True:
-    database = database[:,5]
-
 
 if database == '1':
         st.write("""# Has seleccionado la base de datos 1""")
@@ -51,6 +31,25 @@ else:
     st.write("""# Has seleccionado la base de datos 3""")
     df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/normJA.csv', header=None)
     st.write(df)
+database2 = pd.DataFrame()
+if C2H2 == True and (H2,C2H4,CO,C2H6,CH4) == False:
+    database2.appen(database["1"]) 
+elif C2H2 == True and H2 == True:
+    database = database["1","2"]
+ 
+if H2 == True:
+    database = database["2"]
 
+if C2H4 == True:
+    database = database["3"]
 
+if CO == True:
+    database = database["4"] 
 
+if C2H6 == True:
+    database = database["5"]
+
+if CH4 == True:
+    database = database["6"]
+
+st.write(database2)
