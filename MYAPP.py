@@ -32,8 +32,8 @@ else:
     df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/normJA.csv', header=None)
     st.write(df)
 
-database2 = pd.DataFrame()
-database2 = database2.concat(df[1]) 
+a = df[1]
+b = df[2]
 
 if C2H2 == True and (H2,C2H4,CO,C2H6,CH4) == False:
     database2 = database2.end(df[1]) 
@@ -56,4 +56,4 @@ if C2H6 == True:
 if CH4 == True:
     database = database["6"]
 
-st.write(database2)
+st.write(a)
