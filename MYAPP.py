@@ -69,7 +69,7 @@ if CH4:
     f = df[[0,6]]
     lista.append(f)
 
-if p= 0:
+if p== 0:
     p="""### No hay gases seleccionados, por favor selecciona al menos uno"""
 
 for i in lista:
