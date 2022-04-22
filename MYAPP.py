@@ -73,10 +73,10 @@ if  len(lst) > 0:
 
 st.write(p)
 
-l= pd.DataFrame()
-k= 0
-for i in p:
-    l= l.append(p[i])
-    st.write(l)
-    time.sleep(1)
+#l= pd.DataFrame()
+#k= 0
+#for i in p:
+#    l= l.append(p[i])
+#    st.write(l)
+#    time.sleep(1)
 
