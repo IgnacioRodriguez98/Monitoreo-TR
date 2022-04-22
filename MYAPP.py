@@ -43,23 +43,23 @@ if C2H2:
     a = df[[0,1]]
     lista.append(a)
 
-if H2:
+elif H2:
     b = df[[0,2]]
     lista.append(b)
 
-if C2H4:
+elif C2H4:
     c = df[[0,3]]
     lista.append(c)
 
-if CO:
+elif CO:
     d = df[[0,4]]
     lista.append(d)
 
-if C2H6:
+elif C2H6:
     e = df[[0,5]]
     lista.append(e)
 
-if CH4:
+elif CH4:
     f = df[[0,6]]
     lista.append(f)
 
