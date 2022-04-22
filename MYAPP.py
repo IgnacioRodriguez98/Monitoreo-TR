@@ -44,32 +44,32 @@ if C2H2:
     a = df[[0,1]]
     lista.append(a)
 
-elif H2:
+if H2:
     st.write("2")
     b = df[[0,2]]
     lista.append(b)
 
-elif C2H4:
+if C2H4:
     st.write("3")
     c = df[[0,3]]
     lista.append(c)
 
-elif CO:
+if CO:
     st.write("4")
     d = df[[0,4]]
     lista.append(d)
 
-elif C2H6:
+if C2H6:
     st.write("5")
     e = df[[0,5]]
     lista.append(e)
 
-elif CH4:
+if CH4:
     st.write("6")
     f = df[[0,6]]
     lista.append(f)
 
-else:
+if p= 0:
     p="""### No hay gases seleccionados, por favor selecciona al menos uno"""
 
 for i in lista:
