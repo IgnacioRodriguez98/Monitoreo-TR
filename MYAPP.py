@@ -50,8 +50,9 @@ if C2H2:
 elif C2H2 == True and H2 == True:
     database2 = df[[1,2]]
  
-if H2 == True:
-    database = database["2"]
+if H2:
+    b = df[[0,2]]
+    lst.append(a)
 if C2H4 == True:
     database = database["3"]
 
