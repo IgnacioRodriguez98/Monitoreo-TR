@@ -33,7 +33,7 @@ else:
     st.write(df)
 
 database2 = pd.DataFrame()
-databse2 = database2.append(df["1"]) 
+databse2 = database2.append(df[1]) 
 
 if C2H2 == True and (H2,C2H4,CO,C2H6,CH4) == False:
     database2 = database2.end(df[1]) 
