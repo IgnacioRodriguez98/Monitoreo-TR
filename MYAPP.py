@@ -16,7 +16,7 @@ with st.sidebar:
     C2H6 = st.checkbox("Etano", check)
     CH4 = st.checkbox("Metano", check)
 
-if C2H2 == check and H2,C2H4,CO,C2H6,CH4 != check:
+if C2H2 == check and (H2,C2H4,CO,C2H6,CH4) != check:
     database = database["0"]
 elif C2H2 == check and H2 == check:
     database = database["0","1"]
