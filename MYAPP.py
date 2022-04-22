@@ -32,9 +32,9 @@ else:
     df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/normJA.csv', header=None)
     st.write(df)
 
-a = df[1]
-b = df[2]
-c = pd.merge(a,b, how='inner')
+a = df[[0,1]]
+b = df[[0,2]]
+c = pd.merge(a,b,on ="0", how='outer')
 if C2H2 == True and (H2,C2H4,CO,C2H6,CH4) == False:
     database2 = database2.end(df[1]) 
 
