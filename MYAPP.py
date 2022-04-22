@@ -45,27 +45,30 @@ if C2H2:
     a = df[[0,1]]
     lst.append(a)
 
-if H2:
+elif H2:
     b = df[[0,2]]
     lst.append(b)
 
-if C2H4:
+elif C2H4:
     c = df[[0,3]]
     lst.append(c)
 
-if CO:
+elif CO:
     d = df[[0,4]]
     lst.append(d)
 
-if C2H6:
+elif C2H6:
     e = df[[0,5]]
     lst.append(e)
 
-if CH4:
+elif CH4:
     f = df[[0,6]]
     lst.append(f)
 
-for i in lst:
-    p = pd.merge(p,i,on = 0, how='outer')
-p.drop([0],inplace=True, axis=1)
+else:
+    p="No hay datos seleccionados"
+if  len(lst) > 0:
+    for i in lst:
+        p = pd.merge(p,i,on = 0, how='outer')
+    p.drop([0],inplace=True, axis=1)
 st.write(p)
