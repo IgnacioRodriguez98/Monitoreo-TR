@@ -32,13 +32,13 @@ else:
     df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/normJA.csv', header=None)
     st.write(df)
 
-database2 = df[1]
+database2= pd.DataFrame()
 
 if C2H2 == True and (H2,C2H4,CO,C2H6,CH4) == False:
-    database2 = database2.append(database[1]) 
+    database2 = database2.append(df[1]) 
 
 elif C2H2 == True and H2 == True:
-    database = database["1","2"]
+    database2 = df[[1,2]]
  
 if H2 == True:
     database = database["2"]
