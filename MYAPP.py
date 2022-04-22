@@ -18,22 +18,22 @@ with st.sidebar:
 
 if C2H2 == True and (H2,C2H4,CO,C2H6,CH4) == False:
     database = database["0"]
-elif C2H2 == check and H2 == check:
+elif C2H2 == True and H2 == True:
     database = database["0","1"]
  
-if H2 == check:
+if H2 == True:
     database = database[:,1]
 
-if C2H4 == check:
+if C2H4 == True:
     database = database[:,2]
 
-if CO == check:
+if CO == True:
     database = database[:,3] 
 
-if C2H6 == check:
+if C2H6 == True:
     database = database[:,4]
 
-if CH4 == check:
+if CH4 == True:
     database = database[:,5]
 
 
