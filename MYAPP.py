@@ -77,7 +77,7 @@ st.write(p)
 l= pd.DataFrame()
 k= 0
 for i in p:
-    l= l.append(p[i])
+    l= l.append([p[i]])
     st.write(l)
     time.sleep(1)
 
