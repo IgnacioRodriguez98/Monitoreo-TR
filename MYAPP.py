@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 
 with st.sidebar:
-
     st.write("# Variables")
     database = st.radio(
      "Base de datos",
@@ -15,8 +14,6 @@ with st.sidebar:
     CO = st.checkbox("Monóxido de carbono")
     C2H6 = st.checkbox("Etano")
     CH4 = st.checkbox("Metano")
-    st.write("# Selecciona el tamaño de la ventana:")
-    vent= st.alider("",1,len(df))
 
 if database == '1':
         st.write("""# Has seleccionado la base de datos 1""")
@@ -34,6 +31,9 @@ else:
     st.write(df)
 ##################### SELECCION DE GASES ######################
 
+with st.sidebar:
+    st.write("# Selecciona el tamaño de la ventana:")
+    vent= st.alider("",1,len(df))
 lst = []
 p= df[0]
 
