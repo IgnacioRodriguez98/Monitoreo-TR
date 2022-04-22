@@ -34,7 +34,7 @@ else:
 
 a = df[1]
 b = df[2]
-
+c = pd.concat(a,b)
 if C2H2 == True and (H2,C2H4,CO,C2H6,CH4) == False:
     database2 = database2.end(df[1]) 
 
@@ -56,4 +56,4 @@ if C2H6 == True:
 if CH4 == True:
     database = database["6"]
 
-st.write(b)
+st.write(c)
