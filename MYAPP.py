@@ -76,7 +76,7 @@ for i in lista:
     p = pd.merge(p,i,on = 0, how='outer')
 #p.drop([0],inplace=True, axis=1)
 
-st.write(len(lista))
+st.write(p)
 
 #l= pd.DataFrame()
 #k= 0
