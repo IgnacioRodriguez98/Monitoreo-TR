@@ -52,7 +52,7 @@ elif C2H2 == True and H2 == True:
  
 if H2:
     b = df[[0,2]]
-    lst.append(a)
+    lst.append(b)
 if C2H4 == True:
     database = database["3"]
 
