@@ -10,11 +10,11 @@ with st.sidebar:
 
     st.write("# Selecciona los gases a analizar:")
     C2H2 = st.checkbox("Acetileno")
-    H2 = st.checkbox("Hidrógeno", check)
-    C2H4 = st.checkbox("Etileno", check)
-    CO = st.checkbox("Monóxido de carbono", check)
-    C2H6 = st.checkbox("Etano", check)
-    CH4 = st.checkbox("Metano", check)
+    H2 = st.checkbox("Hidrógeno")
+    C2H4 = st.checkbox("Etileno")
+    CO = st.checkbox("Monóxido de carbono")
+    C2H6 = st.checkbox("Etano")
+    CH4 = st.checkbox("Metano")
 
 if C2H2 == check and (H2,C2H4,CO,C2H6,CH4) != check:
     database = database["0"]
