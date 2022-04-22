@@ -70,4 +70,4 @@ if  len(lst) > 0:
         p = pd.merge(p,i,on = 0, how='outer')
     p.drop([0],inplace=True, axis=1)
 
-st.write(p.tail(vent))
+st.write(p[0:vent])
