@@ -67,5 +67,5 @@ if CH4:
 
 for i in lst:
     p = pd.merge(p,i,on = 0, how='outer')
-p.drop[0]
+p.drop([0],inplace=True)
 st.write(p)
