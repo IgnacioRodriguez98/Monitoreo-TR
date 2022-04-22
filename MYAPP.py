@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import time
 
 with st.sidebar:
     st.write("# Variables")
@@ -71,3 +72,11 @@ if  len(lst) > 0:
     p.drop([0],inplace=True, axis=1)
 
 st.write(p)
+
+l= p.DataFrame()
+k= 0
+for i in p:
+    l= l.append(p[i])
+    st.write(l)
+    time.sleep(1)
+
