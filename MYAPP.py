@@ -53,15 +53,15 @@ if C2H4:
     c = df[[0,3]]
     lst.append(c)
 
-if CO == True:
+if CO:
     d = df[[0,4]]
     lst.append(d)
 
-if C2H6 == True:
+if C2H6:
     e = df[[0,5]]
     lst.append(e)
 
-if CH4 == True:
+if CH4:
     f = df[[0,6]]
     lst.append(f)
 
