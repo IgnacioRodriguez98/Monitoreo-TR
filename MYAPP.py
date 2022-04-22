@@ -40,26 +40,32 @@ lista = []
 p= df[0]
 
 if C2H2:
+    st.write("1")
     a = df[[0,1]]
     lista.append(a)
 
 elif H2:
+    st.write("2")
     b = df[[0,2]]
     lista.append(b)
 
 elif C2H4:
+    st.write("3")
     c = df[[0,3]]
     lista.append(c)
 
 elif CO:
+    st.write("4")
     d = df[[0,4]]
     lista.append(d)
 
 elif C2H6:
+    st.write("5")
     e = df[[0,5]]
     lista.append(e)
 
 elif CH4:
+    st.write("6")
     f = df[[0,6]]
     lista.append(f)
 
