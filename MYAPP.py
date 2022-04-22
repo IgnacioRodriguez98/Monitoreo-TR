@@ -33,7 +33,7 @@ else:
     st.write(df)
 
 database2 = pd.DataFrame()
-database2 = database2.merge(database2,df[1]) 
+database2 = database2.concat(df[1]) 
 
 if C2H2 == True and (H2,C2H4,CO,C2H6,CH4) == False:
     database2 = database2.end(df[1]) 
