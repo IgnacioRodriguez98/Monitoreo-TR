@@ -32,14 +32,6 @@ else:
     df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/normJA.csv', header=None)
     st.write(df)
 
-a = df[[0,1]]
-b = df[[0,2]]
-o = df[[0,3]]
-lst = []
-p= df[0]
-
-    
-c = pd.merge(a,b,on = 0, how='outer')
 
 if C2H2:
     a = df[[0,1]]
@@ -67,8 +59,12 @@ elif CH4:
 
 else:
     p="""### No hay gases seleccionados, por favor selecciona al menos uno"""
+
+p= df[0]
+
 if  len(lst) > 0:
     for i in lst:
         p = pd.merge(p,i,on = 0, how='outer')
     p.drop([0],inplace=True, axis=1)
+
 st.write(p)
