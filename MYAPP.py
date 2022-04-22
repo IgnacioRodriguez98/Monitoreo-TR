@@ -73,7 +73,7 @@ if  len(lst) > 0:
 
 st.write(p)
 
-l= p.DataFrame()
+l= pd.DataFrame()
 k= 0
 for i in p:
     l= l.append(p[i])
