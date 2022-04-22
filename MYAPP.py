@@ -69,7 +69,7 @@ else:
 
 if  len(lst) > 0:
     for i in lst:
-        st.write("Hola")
+        st.write(i)
         p = pd.merge(p,i,on = 0, how='outer')
     p.drop([0],inplace=True, axis=1)
 
