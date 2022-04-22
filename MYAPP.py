@@ -43,23 +43,23 @@ if C2H2:
     a = df[[0,1]]
     lista.append(a)
 
-elif H2:
+if H2:
     b = df[[0,2]]
     lista.append(b)
 
-elif C2H4:
+if C2H4:
     c = df[[0,3]]
     lista.append(c)
 
-elif CO:
+if CO:
     d = df[[0,4]]
     lista.append(d)
 
-elif C2H6:
+if C2H6:
     e = df[[0,5]]
     lista.append(e)
 
-elif CH4:
+if CH4:
     f = df[[0,6]]
     lista.append(f)
 
@@ -74,10 +74,10 @@ if C2H2== False |H2 == False | C2H4 == False |CO == False |C2H6 ==False |CH4 == 
 
 st.write(p)
 
-#l= pd.DataFrame()
-#k= 0
-#for i in p:
-#    l= l.append(p[i])
-#    st.write(l)
-#    time.sleep(1)
+l= pd.DataFrame()
+k= 0
+for i in p:
+    l= l.append(p[i])
+    st.write(l)
+    time.sleep(1)
 
