@@ -40,32 +40,26 @@ lista = []
 p= df[0]
 
 if C2H2:
-    st.write("1")
     a = df[[0,1]]
     lista.append(a)
 
 if H2:
-    st.write("2")
     b = df[[0,2]]
     lista.append(b)
 
 if C2H4:
-    st.write("3")
     c = df[[0,3]]
     lista.append(c)
 
 if CO:
-    st.write("4")
     d = df[[0,4]]
     lista.append(d)
 
 if C2H6:
-    st.write("5")
     e = df[[0,5]]
     lista.append(e)
 
 if CH4:
-    st.write("6")
     f = df[[0,6]]
     lista.append(f)
 
@@ -75,9 +69,9 @@ if len(lista)> 0:
         p = pd.merge(p,i,on = 0, how='outer')
     p.drop([0],inplace=True, axis=1)
 
-if (C2H2,H2,C2H4,CO,C2H6,CH4) == False:
+if C2H2== False |H2 == False | C2H4 == False |CO == False |C2H6 ==False |CH4 == False:
    p="""### No hay gases seleccionados, por favor selecciona al menos uno"""
-   
+
 st.write(p)
 
 #l= pd.DataFrame()
