@@ -35,14 +35,17 @@ else:
 a = df[[0,1]]
 b = df[[0,2]]
 o = df[[0,3]]
-lst = (a,b,o)
+lst = []
 p= df[0]
-for i in lst:
-    p = pd.merge(p,i,on = 0, how='outer')
+
     
 c = pd.merge(a,b,on = 0, how='outer')
-if C2H2 == True and (H2,C2H4,CO,C2H6,CH4) == False:
-    database2 = database2.end(df[1]) 
+if C2H2:
+    a = df[[0,1]]
+    lst.append(a)
+
+#if C2H2 == True and (H2,C2H4,CO,C2H6,CH4) == False:
+#    database2 = database2.end(df[1]) 
 
 elif C2H2 == True and H2 == True:
     database2 = df[[1,2]]
@@ -60,5 +63,8 @@ if C2H6 == True:
 
 if CH4 == True:
     database = database["6"]
+
+for i in lst:
+    p = pd.merge(p,i,on = 0, how='outer')
 
 st.write(p)
