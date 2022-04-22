@@ -69,8 +69,8 @@ if CH4:
     f = df[[0,6]]
     lista.append(f)
 
-#if p== 0:
-#    p="""### No hay gases seleccionados, por favor selecciona al menos uno"""
+if (C2H2,H2,C2H4,CO,C2H6,CH4) == False:
+   p="""### No hay gases seleccionados, por favor selecciona al menos uno"""
 
 for i in lista:
     p = pd.merge(p,i,on = 0, how='outer')
