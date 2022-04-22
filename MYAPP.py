@@ -33,7 +33,7 @@ else:
 
 with st.sidebar:
     st.write("# Selecciona el tamaño de la ventana:")
-    vent= st.alider("",1,len(df))
+    vent= st.slider("",1,len(df))
 lst = []
 p= df[0]
 
