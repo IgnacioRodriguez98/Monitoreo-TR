@@ -32,6 +32,7 @@ else:
     df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/normJA.csv', header=None)
     st.write(df)
 
+p= df[0]
 
 if C2H2:
     a = df[[0,1]]
@@ -60,7 +61,6 @@ elif CH4:
 else:
     p="""### No hay gases seleccionados, por favor selecciona al menos uno"""
 
-p= df[0]
 
 if  len(lst) > 0:
     for i in lst:
