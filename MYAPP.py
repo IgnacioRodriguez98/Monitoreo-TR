@@ -78,8 +78,8 @@ st.write(p)
 
 ax =plt.gca()
 p.plot(kind='line',y="1",ax=ax,color='red')
-ax.set_xlabel(“Index values”)
-ax.set_ylabel(“Latitude values”)
+ax.set_xlabel("Index values")
+ax.set_ylabel("Latitude values")
 plt.title('Demo graph for Line plots')
 plt.show()
 
