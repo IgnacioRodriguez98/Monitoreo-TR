@@ -76,10 +76,17 @@ if C2H2== False |H2 == False | C2H4 == False |CO == False |C2H6 ==False |CH4 == 
 
 st.write(p)
 
-l= pd.DataFrame()
-k= 0
-for i in p:
-    l= l.append([p[i]])
-    st.write(l)
-    time.sleep(1)
+ax =plt.gca()
+p.plot(kind=’line’,y = ‘1’,ax=ax,color=’red’)
+ax.set_xlabel(“Index values”)
+ax.set_ylabel(“Latitude values”)
+plt.title(‘Demo graph for Line plots’)
+plt.show()
+
+#l= pd.DataFrame()
+#k= 0
+#for i in p:
+#    l= l.append([p[i]])
+#    st.write(l)
+#    time.sleep(1)
 
