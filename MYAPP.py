@@ -1,4 +1,3 @@
-import matplotlib as plt
 import plotly.express as px
 import streamlit as st
 import pandas as pd
@@ -7,12 +6,7 @@ import numpy as np
 
 x = np.linspace(-10 , 10, 100)
 y = np.sin(x) 
-#st.write(plt.plot(x, y, marker="x"))
-#st.write(plt.show())
 st.write(y)
-for i in range(100):
-    st.write("Hola")
-    time.sleep(2)
 
 
 with st.sidebar:
@@ -86,13 +80,6 @@ if C2H2== False |H2 == False | C2H4 == False |CO == False |C2H6 ==False |CH4 == 
    p="""### No hay gases seleccionados, por favor selecciona al menos uno"""
 
 st.write(p)
-
-ax =plt.gca()
-p.plot(kind='line',y="1",ax=ax,color='red')
-ax.set_xlabel("Index values")
-ax.set_ylabel("Latitude values")
-plt.title('Demo graph for Line plots')
-plt.show()
 
 #l= pd.DataFrame()
 #k= 0
