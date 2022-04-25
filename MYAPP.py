@@ -4,11 +4,6 @@ import pandas as pd
 import time
 import numpy as np
 
-x = np.linspace(-10 , 10, 100)
-y = np.sin(x) 
-st.write(y)
-
-
 with st.sidebar:
     st.write("# Variables")
     database = st.radio(
