@@ -7,8 +7,9 @@ import numpy as np
 
 x = np.linspace(-10 , 10, 100)
 y = np.sin(x) 
-st.write(plt.plot(x, y, marker="x"))
+#st.write(plt.plot(x, y, marker="x"))
 #st.write(plt.show())
+st.write(y)
 
 
 with st.sidebar:
