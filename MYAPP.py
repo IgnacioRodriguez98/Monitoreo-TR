@@ -3,6 +3,12 @@ import plotly.express as px
 import streamlit as st
 import pandas as pd
 import time
+import numpy as np
+
+x = np.linspace(-10 , 10, 100)
+y = np.sin(x) 
+plt.plot(x, y, marker="x")
+plt.show()
 
 
 with st.sidebar:
