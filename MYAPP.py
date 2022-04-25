@@ -10,7 +10,7 @@ y = np.sin(x)
 #st.write(plt.plot(x, y, marker="x"))
 #st.write(plt.show())
 st.write(y)
-for i in rang(100):
+for i in range(100):
     st.write("Hola")
     time.sleep(2)
 
