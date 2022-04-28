@@ -78,8 +78,6 @@ if C2H2== False |H2 == False | C2H4 == False |CO == False |C2H6 ==False |CH4 == 
 
 st.write(p)
 
-p.to_csv("prueba.csv")
-
 #l= pd.DataFrame()
 #k= 0
 #for i in p:
