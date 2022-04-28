@@ -93,7 +93,7 @@ if st.button('Cargar a Github'):
 
     # Upload to github
     git_prefix = '/Monitoreo-TR/Data'
-    git_file = git_prefix + p.to_csv("prueba.csv")
+    git_file = git_prefix + p
     if git_file in all_files:
         contents = repo.get_contents(git_file)
         repo.update_file(contents.path, "committing files", content, contents.sha, branch="master")
