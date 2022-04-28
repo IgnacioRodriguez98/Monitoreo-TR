@@ -88,7 +88,7 @@ p.to_csv("prueba.csv")
 #    time.sleep(1)
 
 #######################Prueba github ####################
-if st.button('Cargar a Github'):
+"""if st.button('Cargar a Github'):
     g = Github("IgnacioRodriguez98", "sespio007")
 
     # Upload to github
@@ -100,4 +100,4 @@ if st.button('Cargar a Github'):
         print(git_file + ' UPDATED')
     else:
         repo.create_file(git_file, "committing files", content, branch="master")
-        print(git_file + ' CREATED')
+        print(git_file + ' CREATED')"""
