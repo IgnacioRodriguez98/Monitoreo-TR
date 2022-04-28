@@ -78,7 +78,7 @@ if C2H2== False |H2 == False | C2H4 == False |CO == False |C2H6 ==False |CH4 == 
 
 st.write(p)
 
-df3= p.to_csv("prueba.csv")
+p.to_csv("prueba.csv")
 
 #l= pd.DataFrame()
 #k= 0
@@ -92,7 +92,7 @@ if st.button('Cargar a Github'):
     g = Github("IgnacioRodriguez98", "sespio007")
     # Upload to github
     git_prefix = '/Monitoreo-TR/Data'
-    git_file = git_prefix + df3
+    git_file = git_prefix + p.to_csv("prueba.csv")
     if git_file in all_files:
         contents = repo.get_contents(git_file)
         repo.update_file(contents.path, "committing files", content, contents.sha, branch="master")
