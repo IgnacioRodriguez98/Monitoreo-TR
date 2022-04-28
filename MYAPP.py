@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 import time
 import numpy as np
-#from github import Github
+from github import Github
 
 
 with st.sidebar:
