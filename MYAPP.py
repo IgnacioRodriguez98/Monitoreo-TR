@@ -92,15 +92,66 @@ p.to_csv("prueba.csv")
 
 #######################Prueba github ####################
 if st.button('Cargar a Github'):
-    g = Github("IgnacioRodriguez98", "sespio007")
+    #create test pd df to upload
+    d = {'col1': [1, 2, 3], 'col2': [4, 5, 6]}
+    df = pd.DataFrame(d)
+    #convert pd.df to text. This avoids writing the file as csv to local and again reading it
+    df2 = df.to_csv(sep=',', index=False)
 
-    # Upload to github
-    git_prefix = '/Monitoreo-TR/Data'
-    git_file = git_prefix + p
-    if git_file in all_files:
-        contents = repo.get_contents(git_file)
-        repo.update_file(contents.path, "committing files", content, contents.sha, branch="master")
-        print(git_file + ' UPDATED')
-    else:
-        repo.create_file(git_file, "committing files", content, branch="master")
-        print(git_file + ' CREATED')
+    #list files to upload and desired file names with which you want to save on GitHub
+    file_list = [df2,df2]
+    file_names = ['Test.csv','Test2.csv']
+
+    #Specify commit message
+    commit_message = 'Test Python'
+
+    #Create connection with GiHub
+    user = "IgnacioRodriguez98"
+    password = "sespio007"
+    g = Github(user,password)
+
+    #Get list of repos
+    for repo in g.get_user().get_repos():
+        print(repo.name)
+        repo.edit(has_wiki=False)
+
+    #Create connection with desired repo
+    repo = g.get_user().get_repo('Monitoreo-TR')
+
+    #Check files under the selected repo
+    x = repo.get_contents("")
+    for labels in x:
+        print(labels)
+    x = repo.get_contents("Test.csv") #read a specific file from your repo
+
+    #Get available branches in your repo
+    x = repo.get_git_refs()
+    for y in x:
+        print(y)
+    # output eg:- GitRef(ref="refs/heads/master")
+
+    #Select required branch where you want to upload your file.
+    master_ref = repo.get_git_ref("master")
+
+    #Finally, putting everything in a function to make it re-usable
+
+    def updategitfiles(file_names,file_list,userid,pwd,Repo,branch,commit_message =""):
+        if commit_message == "":
+        commit_message = "Data Updated - "+ datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+        g = Github(userid,pwd)
+        repo = g.get_user().get_repo(Repo)
+        master_ref = repo.get_git_ref("heads/"+branch)
+        master_sha = master_ref.object.sha
+        base_tree = repo.get_git_tree(master_sha)
+        element_list = list()
+        for i in range(0,len(file_list)):
+            element = InputGitTreeElement(file_names[i], '100644', 'blob', file_list[i])
+            element_list.append(element)
+        tree = repo.create_git_tree(element_list, base_tree)
+        parent = repo.get_git_commit(master_sha)
+        commit = repo.create_git_commit(commit_message, tree, [parent])
+        master_ref.edit(commit.sha)
+        print('Update complete')
+
+    updategitfiles(file_names,file_list,user,password,'Monitoreo-TR','master')
