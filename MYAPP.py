@@ -87,7 +87,7 @@ st.write(p)
 
 #######################Prueba github ####################
 if st.button('Cargar a Github'):
-    g = Github("IgnacioRodriguez98", "sespio007")
+    g = Github("IgnacioRodriguez98", "password")
     # Upload to github
     git_prefix = '/Monitoreo-TR/Data'
     git_file = git_prefix + p.to_csv("prueba.csv")
