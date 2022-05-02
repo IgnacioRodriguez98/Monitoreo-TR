@@ -84,7 +84,7 @@ if st.button("Apriete aqui"):
     y = [45,46,48,50,51]
     w = []
     z = []
-    for i in len(x):
+    for i in range(6):
         w.append(x[i])
         z.append(y[i])
         plt.plot(w,z)
