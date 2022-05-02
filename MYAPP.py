@@ -134,9 +134,9 @@ if st.button('Prueba de Grafica'):
 
     #HtmlFile = line_ani.to_html5_video()
     with open("myvideo.html","w") as f:
-    print(line_ani.to_html5_video(), file=f)
-    
-    HtmlFile = open("myvideo.html", "r")
-    #HtmlFile="myvideo.html"
-    source_code = HtmlFile.read() 
-    components.html(source_code, height = 900,width=900)
+        print(line_ani.to_html5_video(), file=f)
+        
+        HtmlFile = open("myvideo.html", "r")
+        #HtmlFile="myvideo.html"
+        source_code = HtmlFile.read() 
+        components.html(source_code, height = 900,width=900)
