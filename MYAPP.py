@@ -23,10 +23,6 @@ else:
     k = "Selecciona el idioma"
 ##########################################################
 with st.sidebar:
-    option = st.selectbox(
-     k ,
-     ('English', 'Español'))
-     
     st.write("# Variables")
     database = st.radio(
      "Base de datos",
