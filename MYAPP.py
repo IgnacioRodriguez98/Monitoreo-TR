@@ -9,7 +9,20 @@ import streamlit.components.v1 as components
 import matplotlib.animation as animation
 
 
+
+##########################################################
+if option == "English":
+    k = "Select Lenguages"
+else:
+    k = "Selecciona el idioma"
+
+##########################################################
+
 with st.sidebar:
+    option = st.selectbox(
+     k ,
+     ('English', 'Español'))
+     
     st.write("# Variables")
     database = st.radio(
      "Base de datos",
