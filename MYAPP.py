@@ -1,4 +1,5 @@
 import plotly.express as px
+import matplotlib.pyplot as plt
 import streamlit as st
 import pandas as pd
 import time
@@ -78,6 +79,17 @@ if C2H2== False |H2 == False | C2H4 == False |CO == False |C2H6 ==False |CH4 == 
 
 st.write(p)
 
+if st.button("Apriete aqui"):
+    x = [2016,2017,2018,2019,2020,2021]
+    y = [45,46,48,50,51]
+    w = []
+    z = []
+    for i in len(x):
+        w.append(x[i])
+        z.append(y[i])
+        plt.plot(w,z)
+        time.sleep(2)
+
 #l= pd.DataFrame()
 #k= 0
 #for i in p:
@@ -86,7 +98,7 @@ st.write(p)
 #    time.sleep(1)
 
 #######################Prueba github ####################
-if st.button('Cargar a Github'):
+"""if st.button('Cargar a Github'):
     g = Github("IgnacioRodriguez98", "password")
     # Upload to github
     git_prefix = '/Monitoreo-TR/Data'
@@ -98,3 +110,4 @@ if st.button('Cargar a Github'):
     else:
         repo.create_file(git_file, "committing files", content, branch="master")
         print(git_file + ' CREATED')
+"""
