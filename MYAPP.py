@@ -21,6 +21,8 @@ if option == "Español":
     k = "Selecciona el idioma"
 else:
     k = "Select Lenguages"
+
+st.write(k)
 ##########################################################
 with st.sidebar:
     st.write("# Variables")
