@@ -98,7 +98,7 @@ if st.button("Apriete aqui"):
 #    time.sleep(1)
 
 #######################Prueba github ####################
-"""if st.button('Cargar a Github'):
+if st.button('Cargar a Github'):
     g = Github("IgnacioRodriguez98", "password")
     # Upload to github
     git_prefix = '/Monitoreo-TR/Data'
@@ -110,4 +110,3 @@ if st.button("Apriete aqui"):
     else:
         repo.create_file(git_file, "committing files", content, branch="master")
         print(git_file + ' CREATED')
-"""
