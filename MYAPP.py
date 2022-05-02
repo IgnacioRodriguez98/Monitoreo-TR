@@ -10,14 +10,18 @@ import matplotlib.animation as animation
 
 
 
+k = "Select Lenguages"
+
+with st.sidebar:
+    option = st.selectbox(
+     k ,
+     ('English', 'Español'))
 ##########################################################
 if option == "English":
     k = "Select Lenguages"
 else:
     k = "Selecciona el idioma"
-
 ##########################################################
-
 with st.sidebar:
     option = st.selectbox(
      k ,
