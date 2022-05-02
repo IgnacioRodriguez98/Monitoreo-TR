@@ -17,10 +17,10 @@ with st.sidebar:
      k ,
      ('English', 'Español'))
 ##########################################################
-if option == "English":
-    k = "Select Lenguages"
-else:
+if option == "Español":
     k = "Selecciona el idioma"
+else:
+    k = "Select Lenguages"
 ##########################################################
 with st.sidebar:
     st.write("# Variables")
