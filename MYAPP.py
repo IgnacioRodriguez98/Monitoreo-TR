@@ -162,4 +162,4 @@ if st.button("Matplotlib animation"):
         line.set_ydata(F[i, :])
     anim = animation.FuncAnimation(fig, animate, interval=100, frames=len(t) - 1)
     anim.save('503.gif')
-    st.write(plt)"""
+    st.write(plt)
