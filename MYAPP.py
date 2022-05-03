@@ -107,6 +107,7 @@ gs = []
 dat = []
 va = []
 nm = []
+c = 0
 gr = pd.DataFrame()
 for i in range(len(q)):
     dat.append(q["Date"][i])
@@ -127,7 +128,8 @@ for i in range(len(q)):
     gs.append("Monoxido de carbono")
     gs.append("Etano")
     gs.append("Metano")
-    nm.append(i)
+    nm.append(c)
+    c = c + 1
 
 gr["Num"]= nm
 gr["Date"]=dat
@@ -135,8 +137,8 @@ gr["Gas"]= gs
 gr["Valor"]= va
 
 
-st.write(gr)
-#st.write(len(q))
+#st.write(gr)
+st.write(len(q))
 fig = px.line(gr, x= "Num", y= "Valor", color="Gas",
 animation_frame= "Date", 
 animation_group= "Gas")
