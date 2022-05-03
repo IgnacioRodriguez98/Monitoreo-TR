@@ -90,7 +90,12 @@ if C2H2== False |H2 == False | C2H4 == False |CO == False |C2H6 ==False |CH4 == 
 #st.write(p)
 st.write(p.iloc[:,1:])
 
-fig = px.line(p, x= 0, y= p.iloc[:,1:],
-animation_frame= p.iloc[:, [0]], 
-animation_group= p.iloc[:,1:])
-fig.show()
+q = p.copy()
+header=["Date","Acetileno","Hidrogeno","Etileno","Monoxido de carbono","Etano","Metano"]
+headers = header[0:len(q)]
+q.columns = headers
+st.write(q)
+#fig = px.line(q, x= 0, y= p.iloc[:,1:],
+#animation_frame= q.iloc[:, [0]], 
+#animation_group= q.iloc[:,1:])
+#fig.show()
