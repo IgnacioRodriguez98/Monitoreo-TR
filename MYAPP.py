@@ -103,12 +103,9 @@ q.columns = header
 q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
 #st.write(header[1:])
 #e = q.drop(["DA"],inplace=True, axis=1)
-
-#st.write(len(q))
-prue = []
-for i in range(len(q)):
-    prue.append(q["Metano"][i])
-st.write(prue)
+st.write(len(p))
+st.write(len(q))
+st.write(len(q["Date"]))
 #st.write(len(q))
 #fig = px.line(q, x= "Date", y= "Metano",
 #animation_frame= "Date", 
