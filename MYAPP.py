@@ -128,8 +128,8 @@ for i in range(len(q)):
     gs.append("Monoxido de carbono")
     gs.append("Etano")
     gs.append("Metano")
-    nm.append(c)
-    c = c + 1
+for i in range(len(gr)):
+    nm.append(i)
 
 gr["Num"]= nm
 gr["Date"]=dat
