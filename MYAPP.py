@@ -97,7 +97,7 @@ if C2H2== False |H2 == False | C2H4 == False |CO == False |C2H6 ==False |CH4 == 
 #st.write(p)
 #st.write(p.iloc[:,1:])
 
-#q = p.copy()
+q = p.copy()
 #headers = header[0:len(lista)]
 q.columns = header
 q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
