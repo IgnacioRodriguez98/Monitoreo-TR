@@ -92,7 +92,7 @@ st.write(p.iloc[:,1:])
 
 q = p.copy()
 header=["Date","Acetileno","Hidrogeno","Etileno","Monoxido de carbono","Etano","Metano"]
-headers = header[0:len(q)]
+headers = header[0:len(q)-1]
 q.columns = headers
 st.write(q)
 #fig = px.line(q, x= 0, y= p.iloc[:,1:],
