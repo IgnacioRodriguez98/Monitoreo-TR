@@ -21,7 +21,7 @@ with st.sidebar:
     st.write("# Variables")
     database = st.radio(
      "Base de datos",
-     ('1 (2432 datos)', '2 (9277)', '3 (21533)'))
+     ('1 (2432 datos)', '2 (9277 datos)', '3 (21533 datos)'))
 
     st.write("# Selecciona los gases a analizar:")
     C2H2 = st.checkbox("Acetileno")
@@ -36,7 +36,7 @@ if database == '1 (2432 datos)':
         df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/planta2.csv', header=None)
         st.write(df)
 
-elif database == '2 (9277)':
+elif database == '2 (9277 datos)':
     st.write("""# Has seleccionado la base de datos 2""")
     df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/planta3.csv', header=None)
     st.write(df)
