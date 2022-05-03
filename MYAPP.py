@@ -95,7 +95,7 @@ if C2H2== False |H2 == False | C2H4 == False |CO == False |C2H6 ==False |CH4 == 
    p="""### No hay gases seleccionados, por favor selecciona al menos uno"""
 
 #st.write(p)
-st.write(p.iloc[:,1:])
+#st.write(p.iloc[:,1:])
 
 q = p.copy()
 #headers = header[0:len(lista)]
