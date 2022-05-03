@@ -106,6 +106,7 @@ q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
 gs = []
 dat = []
 va = []
+nm = []
 gr = pd.DataFrame()
 for i in range(len(q)):
     dat.append(q["Date"][i])
@@ -126,14 +127,17 @@ for i in range(len(q)):
     gs.append("Monoxido de carbono")
     gs.append("Etano")
     gs.append("Metano")
+    nm.append(i)
 
+gr["Num"]= nm
 gr["Date"]=dat
 gr["Gas"]= gs
 gr["Valor"]= va
 
+
 st.write(gr)
 #st.write(len(q))
-fig = px.line(gr, x= "Date", y= "Valor", color="Gas",
+fig = px.line(gr, x= "Num", y= "Valor", color="Gas",
 animation_frame= "Date", 
 animation_group= "Gas")
 fig.update_layout(width=800)
