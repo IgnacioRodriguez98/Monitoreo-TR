@@ -52,31 +52,38 @@ else:
 #    vent= st.slider("",1,len(df))
 
 lista = []
+header = ["Date"]
 p= df[0]
 
 if C2H2:
     a = df[[0,1]]
     lista.append(a)
+    header.append("Acetileno")
 
 if H2:
     b = df[[0,2]]
     lista.append(b)
+    header.append("Hidrogeno")
 
 if C2H4:
     c = df[[0,3]]
     lista.append(c)
+    header.append("Etileno")
 
 if CO:
     d = df[[0,4]]
     lista.append(d)
+    header.append("Monoxido de carbono")
 
 if C2H6:
     e = df[[0,5]]
     lista.append(e)
+    header.append("Etano")
 
 if CH4:
     f = df[[0,6]]
     lista.append(f)
+    header.append("Metano")
 
 if len(lista)> 0:
 
@@ -91,9 +98,8 @@ if C2H2== False |H2 == False | C2H4 == False |CO == False |C2H6 ==False |CH4 == 
 st.write(p.iloc[:,1:])
 
 q = p.copy()
-header=["Date","Acetileno","Hidrogeno","Etileno","Monoxido de carbono","Etano","Metano"]
-headers = header[0:len(lista)]
-q.columns = headers
+#headers = header[0:len(lista)]
+q.columns = header
 st.write(q)
 #fig = px.line(q, x= 0, y= p.iloc[:,1:],
 #animation_frame= q.iloc[:, [0]], 
