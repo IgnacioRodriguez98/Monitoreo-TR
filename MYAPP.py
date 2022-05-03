@@ -159,7 +159,7 @@ if st.button("Matplotlib animation"):
     F = 0.9 * sinT2 * np.sinc(X2 * (1 + sinT2))
     line, = ax.plot(x, F[0, :], color='k', lw=2)
     def animate(i):
-    line.set_ydata(F[i, :])
+        line.set_ydata(F[i, :])
     anim = animation.FuncAnimation(fig, animate, interval=100, frames=len(t) - 1)
     anim.save('503.gif')
     st.write(plt)
