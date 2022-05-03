@@ -133,7 +133,7 @@ gr["Valor"]= va
 
 st.write(gr)
 #st.write(len(q))
-fig = px.bar(gr, x= "Valor", y= "Date", color="Gas",
+fig = px.bar(gr, x= "Gas", y= "Valor", color="Gas",
 animation_frame= "Date", 
 animation_group= "Gas")
 fig.update_layout(width=800)
