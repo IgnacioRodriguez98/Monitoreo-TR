@@ -103,9 +103,35 @@ q.columns = header
 q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
 #st.write(header[1:])
 #e = q.drop(["DA"],inplace=True, axis=1)
-st.write(len(p))
-st.write(len(q))
-st.write(len(q["Date"]))
+gs = []
+dat = []
+va = []
+gr = pd.DataFrame()
+for i in range(len(q)):
+    dat.append(q["Date"][i])
+    dat.append(q["Date"][i])
+    dat.append(q["Date"][i])
+    dat.append(q["Date"][i])
+    dat.append(q["Date"][i])
+    dat.append(q["Date"][i])
+    va.append(q["Acetileno"][i])
+    va.append(q["Hidrogeno"][i])
+    va.append(q["Etileno"][i])
+    va.append(q["Monoxido de carbono"][i])
+    va.append(q["Etano"][i])
+    va.append(q["Metano"][i])
+    gs.append("Acetileno")
+    gs.append("Hidrogeno")
+    gs.append("Etileno")
+    gs.append("Monoxido de carbono")
+    gs.append("Etano")
+    gs.append("Metano")
+
+gr["Date"]=dat
+gr["Gas"]= gs
+gr["Valor"]= va
+
+st.write(gr)
 #st.write(len(q))
 #fig = px.line(q, x= "Date", y= "Metano",
 #animation_frame= "Date", 
