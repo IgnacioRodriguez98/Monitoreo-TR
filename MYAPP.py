@@ -110,4 +110,4 @@ q.set_index("Date")
 fig = px.line(q, x= "Date", y= "Metano",
 animation_frame= "Date", 
 animation_group= "Metano")
-fig.show()
+st.write(fig)
