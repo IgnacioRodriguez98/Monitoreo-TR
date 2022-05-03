@@ -106,7 +106,6 @@ q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
 gs = []
 dat = []
 va = []
-nm = []
 c = 0
 gr = pd.DataFrame()
 for i in range(len(q)):
@@ -128,9 +127,10 @@ for i in range(len(q)):
     gs.append("Monoxido de carbono")
     gs.append("Etano")
     gs.append("Metano")
+
 for i in range(len(gr)):
     nm.append(i)
-
+nm = [0:len(gr)]
 st.write(nm)
 gr["Num"]= nm
 gr["Date"]=dat
