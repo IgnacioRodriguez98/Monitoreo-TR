@@ -107,7 +107,7 @@ q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
 
 q.set_index("Date")
 
-fig = px.line(q, x= "Date", y= header[1:],
+fig = px.line(q, x= "Date", y= "Metano",
 animation_frame= "Date", 
-animation_group= q.columns([header]))
+animation_group= "Metano")
 fig.show()
