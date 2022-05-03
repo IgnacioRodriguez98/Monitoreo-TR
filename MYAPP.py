@@ -93,5 +93,5 @@ st.write(p.iloc[:,1:])
 fig = px.line(p, x= 0, y= p.iloc[:,1:],
 animation_frame= p.iloc[:, [0]], 
 animation_group= p.iloc[:,1:], 
-range_y=any())
+range_y=[0,p.max().max()])
 #fig.show()
