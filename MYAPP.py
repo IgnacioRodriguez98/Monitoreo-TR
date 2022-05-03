@@ -102,8 +102,8 @@ q = p.copy()
 q.columns = header
 st.write(q)
 q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
-st.write(q[1:])
-#fig = px.line(q, x= "Date", y= q[1:],
+st.write(header[1:])
+#fig = px.line(q, x= "Date", y= header[1:],
 #animation_frame= q.iloc[:, [0]], 
 #animation_group= q.iloc[:,1:])
 #fig.show()
