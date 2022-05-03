@@ -103,11 +103,11 @@ q.columns = header
 st.write(q)
 q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
 #st.write(header[1:])
-e = q.drop(["Date"],inplace=True, axis=1)
+#e = q.drop(["DA"],inplace=True, axis=1)
 
 
 
-fig = px.line(q, x= "Metano", y= header[1:],
-animation_frame= "Acetileno", 
-animation_group= e)
+fig = px.line(q, x= "Date", y= header[1:],
+animation_frame= "Date", 
+animation_group= q)
 fig.show()
