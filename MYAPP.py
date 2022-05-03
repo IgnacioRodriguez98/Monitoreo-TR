@@ -106,9 +106,9 @@ q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
 
 for i in len(q):
     st.write(q["Metano"][i])
-st.write(len(q))
-fig = px.line(q, x= "Date", y= "Metano",
-animation_frame= "Date", 
-animation_group= "Metano")
-fig.update_layout(width=800)
-st.write(fig)
+#st.write(len(q))
+#fig = px.line(q, x= "Date", y= "Metano",
+#animation_frame= "Date", 
+#animation_group= "Metano")
+#fig.update_layout(width=800)
+#st.write(fig)
