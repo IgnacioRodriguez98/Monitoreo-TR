@@ -126,7 +126,7 @@ for i in range(len(q)):
     #va.append(q["Monoxido de carbono"][i])
     #va.append(q["Etano"][i])
     #va.append(q["Metano"][i])
-    gs.append(lista)
+    gs.append(header[1:])
     #gs.append("Anomalia")
 
 #for i in range(len(gs)):
