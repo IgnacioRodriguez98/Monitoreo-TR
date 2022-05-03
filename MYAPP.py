@@ -110,4 +110,5 @@ q.set_index("Date")
 fig = px.scatter(q, x= "Date", y= "Metano",
 animation_frame= "Date", 
 animation_group= "Metano")
+fig.update_layout(width=800)
 st.write(fig)
