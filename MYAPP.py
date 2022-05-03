@@ -138,10 +138,19 @@ gr["Gas"]= gs
 gr["Valor"]= va
 
 
+st.write(q)
 st.write(gr)
 if st.button("Simulación tiempo real"):
     #st.write(len(q))
     fig = px.bar(gr, x= "Gas", y= "Valor", color="Gas",
+    animation_frame= "Date", 
+    animation_group= "Gas")
+    fig.update_layout(width=800)
+    st.write(fig)
+
+if st.button("Simulación tiempo real 2"):
+    #st.write(len(q))
+    fig = px.bar(q, x= "Gas", y= "Valor", color="Gas",
     animation_frame= "Date", 
     animation_group= "Gas")
     fig.update_layout(width=800)
