@@ -110,11 +110,11 @@ nm = []
 c = 0
 gr = pd.DataFrame()
 st.write(header[1:])
-#for i in range(len(q)):
-#    for k in range(len(lista)+1):
-#        dat.append(q["Date"][i])
-#    for k in header:
-#        va.append(q[k][i])
+for i in range(len(q)):
+    for k in range(len(lista)+1):
+        dat.append(q["Date"][i])
+    for k in header:
+        va.append(q[k][i])
     #dat.append(q["Date"][i])
     #dat.append(q["Date"][i])
     #dat.append(q["Date"][i])
@@ -127,7 +127,9 @@ st.write(header[1:])
     #va.append(q["Monoxido de carbono"][i])
     #va.append(q["Etano"][i])
     #va.append(q["Metano"][i])
-#    gs.append(header[1:])
+    for k in header[1:]:
+        gs.append(k)
+    #gs.append(header[1:])
     #gs.append("Anomalia")
 
 #for i in range(len(gs)):
