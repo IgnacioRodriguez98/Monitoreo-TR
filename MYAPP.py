@@ -101,7 +101,7 @@ q = p.copy()
 #headers = header[0:len(lista)]
 q.columns = header
 st.write(q)
-q["Date"].to_datetime("%Y-%m-%d %H:%M:%S")
+q["Date"].to_strftime("%Y-%m-%d %H:%M:%S")
 #fig = px.line(q, x= 0, y= p.iloc[:,1:],
 #animation_frame= q.iloc[:, [0]], 
 #animation_group= q.iloc[:,1:])
