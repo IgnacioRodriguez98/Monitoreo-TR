@@ -109,7 +109,7 @@ va = []
 nm = []
 c = 0
 gr = pd.DataFrame()
-st.write(header)
+st.write(header[1:])
 #for i in range(len(q)):
 #    for k in range(len(lista)+1):
 #        dat.append(q["Date"][i])
