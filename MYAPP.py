@@ -107,7 +107,7 @@ e = q.drop(["Date"],inplace=True, axis=1)
 
 
 
-fig = px.line(q, x= "Hola", y= header[1:],
+fig = px.line(q, x= "Metano", y= header[1:],
 animation_frame= "Date", 
 animation_group= e)
 fig.show()
