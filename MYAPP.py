@@ -128,9 +128,9 @@ for i in range(len(q)):
     gs.append("Etano")
     gs.append("Metano")
 
-for i in range(len(gr)):
+for i in range(len(gs)):
     nm.append(i)
-nm = [0:len(gr)]
+
 st.write(nm)
 gr["Num"]= nm
 gr["Date"]=dat
