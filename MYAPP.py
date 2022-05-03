@@ -110,29 +110,29 @@ nm = []
 c = 0
 gr = pd.DataFrame()
 for i in range(len(q)):
-    dat.append(q["Date"][i])
-    dat.append(q["Date"][i])
-    dat.append(q["Date"][i])
-    dat.append(q["Date"][i])
-    dat.append(q["Date"][i])
-    dat.append(q["Date"][i])
-    va.append(q["Acetileno"][i])
-    va.append(q["Hidrogeno"][i])
-    va.append(q["Etileno"][i])
-    va.append(q["Monoxido de carbono"][i])
-    va.append(q["Etano"][i])
-    va.append(q["Metano"][i])
-    gs.append("Acetileno")
-    gs.append("Hidrogeno")
-    gs.append("Etileno")
-    gs.append("Monoxido de carbono")
-    gs.append("Etano")
-    gs.append("Metano")
+    for k in range(len(lista)+1):
+        dat.append(q["Date"][i])
+    for k in range(len(lista)):
+        va.append(q[k][i])
+    #dat.append(q["Date"][i])
+    #dat.append(q["Date"][i])
+    #dat.append(q["Date"][i])
+    #dat.append(q["Date"][i])
+    #dat.append(q["Date"][i])
+    #dat.append(q["Date"][i])
+    #va.append(q["Acetileno"][i])
+    #va.append(q["Hidrogeno"][i])
+    #va.append(q["Etileno"][i])
+    #va.append(q["Monoxido de carbono"][i])
+    #va.append(q["Etano"][i])
+    #va.append(q["Metano"][i])
+    gs.append(lista)
+    #gs.append("Anomalia")
 
-for i in range(len(gs)):
-    nm.append(i)
+#for i in range(len(gs)):
+#    nm.append(i)
 
-gr["Num"]= nm
+#gr["Num"]= nm
 gr["Date"]=dat
 gr["Gas"]= gs
 gr["Valor"]= va
