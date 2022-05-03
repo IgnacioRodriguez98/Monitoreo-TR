@@ -87,9 +87,9 @@ if len(lista)> 0:
 if C2H2== False |H2 == False | C2H4 == False |CO == False |C2H6 ==False |CH4 == False:
    p="""### No hay gases seleccionados, por favor selecciona al menos uno"""
 
-st.write(p)
-st.write(len(lista))
+#st.write(p)
+st.write(p.iloc[:,-1:0])
 
 #fig = px.bar(p, x="Fecha", y="Valor Gas",
-#  animation_frame= p.iloc[:, [0]], animation_group= p.iloc[:,len(lista)], range_y=[0,20])
+#  animation_frame= p.iloc[:, [0]], animation_group= p.iloc[:,-1:0], range_y=[0,20])
 #fig.show()
