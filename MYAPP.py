@@ -138,9 +138,10 @@ gr["Valor"]= va
 
 
 st.write(gr)
-#st.write(len(q))
-fig = px.line(gr, x= "Num", y= "Valor", color="Gas",
-animation_frame= "Date", 
-animation_group= "Gas")
-fig.update_layout(width=800)
-st.write(fig)
+if st.button("Simulación tiempo real"):
+    #st.write(len(q))
+    fig = px.line(gr, x= "Num", y= "Valor", color="Gas",
+    animation_frame= "Date", 
+    animation_group= "Gas")
+    fig.update_layout(width=800)
+    st.write(fig)
