@@ -137,8 +137,8 @@ gr["Gas"]= gs
 gr["Valor"]= va
 
 
-#st.write(gr)
-st.write(len(q))
+st.write(gr)
+#st.write(len(q))
 fig = px.line(gr, x= "Num", y= "Valor", color="Gas",
 animation_frame= "Date", 
 animation_group= "Gas")
