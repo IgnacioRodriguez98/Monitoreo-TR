@@ -113,7 +113,7 @@ st.write(header[1:])
 for i in range(len(q)):
     for k in range(len(lista)+1):
         dat.append(q["Date"][i])
-    for k in header:
+    for k in header[1:]:
         va.append(q[k][i])
     #dat.append(q["Date"][i])
     #dat.append(q["Date"][i])
