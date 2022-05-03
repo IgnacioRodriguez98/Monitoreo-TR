@@ -82,14 +82,14 @@ if len(lista)> 0:
 
     for i in lista:
         p = pd.merge(p,i,on = 0, how='outer')
-    #p.drop([0],inplace=True, axis=1)
+   # b = p.drop([0],inplace=True, axis=1)
 
 if C2H2== False |H2 == False | C2H4 == False |CO == False |C2H6 ==False |CH4 == False:
    p="""### No hay gases seleccionados, por favor selecciona al menos uno"""
 
 st.write(p)
+st.write(lista)
 
-
-fig = px.bar(p, x="Fecha", y="Valor Gas",
-  animation_frame= p.iloc[:, [0]], animation_group= p.iloc[:, lista], range_y=[0,20])
-fig.show()
+#fig = px.bar(p, x="Fecha", y="Valor Gas",
+#  animation_frame= p.iloc[:, [0]], animation_group= p.iloc[:,len(lista)], range_y=[0,20])
+#fig.show()
