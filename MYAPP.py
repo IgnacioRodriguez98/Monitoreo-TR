@@ -100,13 +100,12 @@ if C2H2== False |H2 == False | C2H4 == False |CO == False |C2H6 ==False |CH4 == 
 q = p.copy()
 #headers = header[0:len(lista)]
 q.columns = header
-st.write(q)
 q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
 #st.write(header[1:])
 #e = q.drop(["DA"],inplace=True, axis=1)
 
 
-st.write(q)
+st.write(len(q))
 fig = px.line(q, x= "Date", y= "Metano",
 animation_frame= "Date", 
 animation_group= "Metano")
