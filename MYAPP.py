@@ -9,12 +9,9 @@ import streamlit.components.v1 as components
 import matplotlib.animation as animation
 
 
-
-k = "Select Lenguages"
-
 with st.sidebar:
     option = st.selectbox(
-     k ,
+     "Lenguage / Idioma" ,
      ('English', 'Español'))
 ##########################################################
 
