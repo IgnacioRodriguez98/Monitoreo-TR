@@ -130,15 +130,15 @@ for i in range(len(q)):
     gs.append("Metano")
 for i in range(len(gr)):
     nm.append(i)
-    st.write(i)
 
+st.write(nm)
 gr["Num"]= nm
 gr["Date"]=dat
 gr["Gas"]= gs
 gr["Valor"]= va
 
 
-st.write(gr)
+#st.write(gr)
 if st.button("Simulación tiempo real"):
     #st.write(len(q))
     fig = px.line(gr, x= "Num", y= "Valor", color="Gas",
