@@ -92,9 +92,9 @@ st.write(p.iloc[:,1:])
 
 q = p.copy()
 header=["Date","Acetileno","Hidrogeno","Etileno","Monoxido de carbono","Etano","Metano"]
-headers = header[0:len(q)]
-#q.columns = headers
-st.write(len(q))
+headers = header[0:len(lista)]
+q.columns = headers
+st.write(q)
 #fig = px.line(q, x= 0, y= p.iloc[:,1:],
 #animation_frame= q.iloc[:, [0]], 
 #animation_group= q.iloc[:,1:])
