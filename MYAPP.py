@@ -112,7 +112,7 @@ gr = pd.DataFrame()
 for i in range(len(q)):
     for k in range(len(lista)+1):
         dat.append(q["Date"][i])
-    for k in range(len(lista)):
+    for k in lista:
         va.append(q[k][i])
     #dat.append(q["Date"][i])
     #dat.append(q["Date"][i])
