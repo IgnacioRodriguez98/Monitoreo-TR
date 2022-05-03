@@ -103,7 +103,7 @@ q.columns = header
 st.write(q)
 q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
 #st.write(header[1:])
-e = q.drop(["DA"],inplace=True, axis=1)
+e = q.drop(["Date"],inplace=True, axis=1)
 
 
 
