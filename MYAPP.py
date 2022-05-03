@@ -110,7 +110,7 @@ nm = []
 c = 0
 gr = pd.DataFrame()
 for i in range(len(q)):
-    for k in len(header[1:]):
+    for k in range(len(header[1:])):
         dat.append(q["Date"][i])
     #dat.append(q["Date"][i])
     #dat.append(q["Date"][i])
