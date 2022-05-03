@@ -106,6 +106,7 @@ q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
 gs = []
 dat = []
 va = []
+nm = []
 c = 0
 gr = pd.DataFrame()
 for i in range(len(q)):
