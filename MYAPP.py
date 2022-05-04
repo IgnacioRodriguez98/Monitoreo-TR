@@ -98,30 +98,6 @@ if len(header) == 1:
 q = p.copy()
 q.columns = header
 q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
-gs = []
-dat = []
-va = []
-c = 0
-gr = pd.DataFrame()
-for i in range(len(q)):
-    for k in range(len(header[1:])):
-        dat.append(q["Date"][i])
-    for k in header[1:]:
-        va.append(q[k][i])
-    for k in header[1:]:
-        gs.append(k)
-        
-gr["Date"]=dat
-gr["Gas"]= gs
-gr["Valor"]= va
-
-if st.button("Simulación tiempo real"):
-    #st.write(len(q))
-    fig = px.bar(gr, x= "Gas", y= "Valor", color="Gas",
-    animation_frame= "Date", 
-    animation_group= "Gas")
-    fig.update_layout(width=800)
-    st.write(fig)
 
 ########################################################################################################
 
@@ -334,7 +310,7 @@ if st.button("Simulación tiempo real"):
     animation_group= "Gas")
     fig.update_layout(width=800)
     st.write(fig)
-    
+
 st.write(q)
 st.write(gr)
 st.write(p)
