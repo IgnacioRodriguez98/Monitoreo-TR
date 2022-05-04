@@ -117,10 +117,6 @@ else:
     gr["Gas"]= gs
     gr["Valor"]= va
 
-
-    st.write(q)
-    st.write(gr)
-    st.write(p)
     if st.button("Simulación tiempo real"):
         #st.write(len(q))
         fig = px.bar(gr, x= "Gas", y= "Valor", color="Gas",
@@ -129,27 +125,196 @@ else:
         fig.update_layout(width=800)
         st.write(fig)
 
-    if st.button("Simulación tiempo real 2"):
-        #st.write(len(q))
-        fig = px.bar(q, x= "Gas", y= "Valor", color="Gas",
-        animation_frame= "Date", 
-        animation_group= "Gas")
-        fig.update_layout(width=800)
-        st.write(fig)
+########################################################################################################
 
-    if st.button("Matplotlib animation"):
-        plt.rcParams["figure.figsize"] = [7.00, 3.50]
-        plt.rcParams["figure.autolayout"] = True
-        fig, ax = plt.subplots()
-        ax.set(xlim=(-3, 3), ylim=(-1, 1))
-        x = np.linspace(-3, 3, 91)
-        t = np.linspace(1, 25, 30)
-        X2, T2 = np.meshgrid(x, t)
-        sinT2 = np.sin(2 * np.pi * T2 / T2.max())
-        F = 0.9 * sinT2 * np.sinc(X2 * (1 + sinT2))
-        line, = ax.plot(x, F[0, :], color='k', lw=2)
-        def animate(i):
-            line.set_ydata(F[i, :])
-        anim = animation.FuncAnimation(fig, animate, interval=100, frames=len(t) - 1)
-        anim.save('503.gif')
-        st.write(plt)
+######### Reproduccion tiempo real
+db = []
+p.drop([0],inplace=True, axis=1)
+st.write(p)
+
+for i, row in p.iterrows():
+    db.append(row)
+
+db = pd.DataFrame(db)
+
+############## Grafica
+fig = px.line(db)
+st.write(fig)
+
+#### AUTOENCODER
+from pyod.models.auto_encoder import AutoEncoder
+from sklearn.preprocessing import StandardScaler
+import matplotlib.pyplot as plt
+gases = []
+if len(header) == 2:
+    gases = [0]
+
+elif len(header) == 3:
+    gases = [0,1]
+
+elif len(header) == 4:
+    gases = [0,1,2]
+
+elif len(header) == 5:
+    gases = [0,1,2,3]
+
+elif len(header) == 6:
+    gases = [0,1,2,3,4]
+
+elif len(header) == 7:
+    gases = [0,1,2,3,4,5]
+
+elif len(header) == 1:
+   st.write("Por favor escoge los gases a analizar")
+
+q["Anomalias"]=np.ones(len(p)) ##################
+
+if len(header) >= 3:
+
+    X_train = db[0:round((len(db)/3)*2)]
+    X_test = db[round((len(db)/3)*2):]
+    n_features = con #para gases
+    y_train = np.zeros(round((len(db)/3)*2))
+    y_test = np.zeros(len(db)-round((len(db)/3)*2))
+    y_train[round((len(db)/3)*2):] = 1
+    y_test[len(db)-round((len(db)/3)*2):] = 1
+    y_train = pd.DataFrame(y_train)
+    y_test = pd.DataFrame(y_test)
+
+#estandarizacion
+    X_train = StandardScaler().fit_transform(X_train)
+    X_train = pd.DataFrame(X_train)
+    X_test = StandardScaler().fit_transform(X_test)
+    X_test = pd.DataFrame(X_test)
+
+    clf = AutoEncoder(hidden_neurons =[25, 2, 2, 25],contamination=.01)
+    clf.fit(X_train)
+
+# Get the outlier scores for the train data
+    y_train_scores = clf.decision_scores_  
+
+# Predict the anomaly scores
+    y_test_scores = clf.decision_function(X_test)  # outlier scores
+    y_test_scores = pd.Series(y_test_scores)
+    fig3 = plt.figure(figsize=(10,4))   
+    plt.hist(y_test_scores, bins='auto')  
+    plt.title("Histogram for Model Clf Anomaly Scores")
+    plt.show();
+    df_test = X_test.copy()
+    df_test['score'] = y_test_scores
+    df_test['cluster'] = np.where(df_test['score']<4, 0, 1)
+    df_test['cluster'].value_counts()
+
+    t = df_test.groupby('cluster').mean()
+    indices = pd.DataFrame(np.where(y_test_scores > (t["score"].max()-.5)))
+    st.write(indices)
+    for i, j  in indices.iteritems():
+        q["Anomalias"][j]=-1
+    X_test = db[round((len(db)/3)*2):]
+    X_test.reset_index(inplace=True)
+    X_test.drop(["index"],axis=1,inplace=True)
+    fig2 = plt.figure(2)
+    plt.plot(X_test.index,X_test.iloc[:, gases])
+    plt.vlines([indices],0,X_test.max().max(),"r")
+    plt.xlabel('Date Time')
+    plt.ylabel('Gases')
+    plt.show();
+    st.write(fig3)
+    st.write(fig2)
+   
+    
+
+####### ISOLATION FOREST
+
+from sklearn.ensemble import IsolationForest
+if len(header) == 2:
+    CO = db.iloc[:, [0]]
+
+#Parámetros
+    outliers_fraction = float(.1)
+    scaler = StandardScaler()
+    np_scaled = scaler.fit_transform(CO.values.reshape(-1, 1))
+    data = pd.DataFrame(CO.iloc[:, [0]])
+    model =  IsolationForest(contamination=outliers_fraction)
+    model.fit(data)
+
+    CO['anomaly'] = model.predict(data)
+    q["Anomalias"] =model.predict(data)
+
+    if CO.columns[0]==1:
+        fig4, ax = plt.subplots(figsize=(10,6))
+
+        a = CO.loc[CO['anomaly'] == -1, [1]] #anomaly
+
+        ax.plot(CO.index, CO.iloc[:, [0]], color='black', label = 'Normal')
+        ax.scatter(a.index,a.iloc[:, [0]], color='red', label = 'Anomaly')
+        plt.title("Acetileno")
+        plt.legend()
+        plt.show();
+        st.write(fig4,ax)
+
+    elif CO.columns[0]==2:
+        fig4, ax = plt.subplots(figsize=(10,6))
+
+        a = CO.loc[CO['anomaly'] == -1, [2]] #anomaly
+
+        ax.plot(CO.index, CO.iloc[:, [0]], color='black', label = 'Normal')
+        ax.scatter(a.index,a.iloc[:, [0]], color='red', label = 'Anomaly')
+        plt.title("Hidrogeno")
+        plt.legend()
+        plt.show();
+        st.write(fig4,ax)
+
+    elif CO.columns[0]==3:
+        fig4, ax = plt.subplots(figsize=(10,6))
+
+        a = CO.loc[CO['anomaly'] == -1, [3]] #anomaly
+
+        ax.plot(CO.index, CO.iloc[:, [0]], color='black', label = 'Normal')
+        ax.scatter(a.index,a.iloc[:, [0]], color='red', label = 'Anomaly')
+        plt.title("Etileno")
+        plt.legend()
+        plt.show();
+        st.write(fig4,ax)
+
+    elif CO.columns[0]==4:
+        fig4, ax = plt.subplots(figsize=(10,6))
+
+        a = CO.loc[CO['anomaly'] == -1, [4]] #anomaly
+
+        ax.plot(CO.index, CO.iloc[:, [0]], color='black', label = 'Normal')
+        ax.scatter(a.index,a.iloc[:, [0]], color='red', label = 'Anomaly')
+        plt.title("Monoxido de Carbono")
+        plt.legend()
+        plt.show();
+        st.write(fig4,ax)
+        
+    elif CO.columns[0]==5:
+        fig4, ax = plt.subplots(figsize=(10,6))
+
+        a = CO.loc[CO['anomaly'] == -1, [5]] #anomaly
+
+        ax.plot(CO.index, CO.iloc[:, [0]], color='black', label = 'Normal')
+        ax.scatter(a.index,a.iloc[:, [0]], color='red', label = 'Anomaly')
+        plt.title("Etano")
+        plt.legend()
+        plt.show();
+        st.write(fig4,ax)
+
+    elif CO.columns[0]==6:
+        fig4, ax = plt.subplots(figsize=(10,6))
+
+        a = CO.loc[CO['anomaly'] == -1, [6]] #anomaly
+
+        ax.plot(CO.index, CO.iloc[:, [0]], color='black', label = 'Normal')
+        ax.scatter(a.index,a.iloc[:, [0]], color='red', label = 'Anomaly')
+        plt.title("Metano")
+        plt.legend()
+        plt.show();
+        st.write(fig4,ax)    
+# visualization
+
+header.append("Anomalias")
+st.write(q)
+st.write(gr)
+st.write(p)
