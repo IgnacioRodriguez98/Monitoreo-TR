@@ -94,7 +94,7 @@ if len(lista)> 0:
 if C2H2== False |H2 == False | C2H4 == False |CO == False |C2H6 ==False |CH4 == False:
    p="""### No hay gases seleccionados, por favor selecciona al menos uno"""
 
-if p != """### No hay gases seleccionados, por favor selecciona al menos uno"""
+if p != """### No hay gases seleccionados, por favor selecciona al menos uno""":
     q = p
     q.columns = header
     q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
