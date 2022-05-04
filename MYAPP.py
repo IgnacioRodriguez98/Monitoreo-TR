@@ -4,9 +4,7 @@ import streamlit as st
 import pandas as pd
 import time
 import numpy as np
-from github import Github
-import streamlit.components.v1 as components
-import matplotlib.animation as animation
+from sklearn.ensemble import IsolationForest
 
 
 with st.sidebar:
@@ -173,7 +171,7 @@ if len(header) >= 3:
 
     X_train = db[0:round((len(db)/3)*2)]
     X_test = db[round((len(db)/3)*2):]
-    n_features = con #para gases
+    n_features = len(header)-1 #para gases
     y_train = np.zeros(round((len(db)/3)*2))
     y_test = np.zeros(len(db)-round((len(db)/3)*2))
     y_train[round((len(db)/3)*2):] = 1
@@ -225,8 +223,6 @@ if len(header) >= 3:
     
 
 ####### ISOLATION FOREST
-
-from sklearn.ensemble import IsolationForest
 if len(header) == 2:
     CO = db.iloc[:, [0]]
 
