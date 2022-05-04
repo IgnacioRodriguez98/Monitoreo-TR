@@ -314,5 +314,5 @@ if st.button("Simulación tiempo real"):
 st.write(q)
 st.write(gr)
 st.write(p)
-st.write(q.max().max())
-st.write(gr.max().max())
+st.write(q[:,1:].max().max())
+st.write(gr[:,1:].max().max())
