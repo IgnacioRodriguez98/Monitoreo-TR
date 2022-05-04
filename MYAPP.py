@@ -97,7 +97,7 @@ if C2H2== False |H2 == False | C2H4 == False |CO == False |C2H6 ==False |CH4 == 
 if len(header) == 1:
     st.write("""### No hay gases seleccionados, por favor selecciona al menos uno para continuar""")
 else:    
-    q = p
+    q = p.copy()
     q.columns = header
     q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
     gs = []
