@@ -95,7 +95,7 @@ if C2H2== False |H2 == False | C2H4 == False |CO == False |C2H6 ==False |CH4 == 
    p="""### No hay gases seleccionados, por favor selecciona al menos uno"""
 
 if len(header) == 1:
-    st.write("""### No hay gases seleccionados, por favor selecciona al menos uno""")
+    st.write("""### No hay gases seleccionados, por favor selecciona al menos uno para continuar""")
 else:    
     q = p
     q.columns = header
