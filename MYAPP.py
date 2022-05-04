@@ -94,34 +94,34 @@ if C2H2== False |H2 == False | C2H4 == False |CO == False |C2H6 ==False |CH4 == 
 
 if len(header) == 1:
     st.write("""### No hay gases seleccionados, por favor selecciona al menos uno para continuar""")
-else:    
-    q = p.copy()
-    q.columns = header
-    q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
-    gs = []
-    dat = []
-    va = []
-    c = 0
-    gr = pd.DataFrame()
-    for i in range(len(q)):
-        for k in range(len(header[1:])):
-            dat.append(q["Date"][i])
-        for k in header[1:]:
-            va.append(q[k][i])
-        for k in header[1:]:
-            gs.append(k)
-            
-    gr["Date"]=dat
-    gr["Gas"]= gs
-    gr["Valor"]= va
+#else:    
+q = p.copy()
+q.columns = header
+q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
+gs = []
+dat = []
+va = []
+c = 0
+gr = pd.DataFrame()
+for i in range(len(q)):
+    for k in range(len(header[1:])):
+        dat.append(q["Date"][i])
+    for k in header[1:]:
+        va.append(q[k][i])
+    for k in header[1:]:
+        gs.append(k)
+        
+gr["Date"]=dat
+gr["Gas"]= gs
+gr["Valor"]= va
 
-    if st.button("Simulación tiempo real"):
-        #st.write(len(q))
-        fig = px.bar(gr, x= "Gas", y= "Valor", color="Gas",
-        animation_frame= "Date", 
-        animation_group= "Gas")
-        fig.update_layout(width=800)
-        st.write(fig)
+if st.button("Simulación tiempo real"):
+    #st.write(len(q))
+    fig = px.bar(gr, x= "Gas", y= "Valor", color="Gas",
+    animation_frame= "Date", 
+    animation_group= "Gas")
+    fig.update_layout(width=800)
+    st.write(fig)
 
 ########################################################################################################
 
@@ -311,6 +311,30 @@ if len(header) == 2:
 # visualization
 
 header.append("Anomalias")
+gs = []
+dat = []
+va = []
+c = 0
+gr = pd.DataFrame()
+for i in range(len(q)):
+    for k in range(len(header[1:])):
+        dat.append(q["Date"][i])
+    for k in header[1:]:
+        va.append(q[k][i])
+    for k in header[1:]:
+        gs.append(k)
+        
+gr["Date"]=dat
+gr["Gas"]= gs
+gr["Valor"]= va
+
+if st.button("Simulación tiempo real"):
+    #st.write(len(q))
+    fig = px.bar(gr, x= "Gas", y= "Valor", color="Gas",
+    animation_frame= "Date", 
+    animation_group= "Gas")
+    fig.update_layout(width=800)
+    st.write(fig)
 st.write(q)
 st.write(gr)
 st.write(p)
