@@ -110,7 +110,7 @@ for i in range(len(q)):
         va.append(q[k][i])
     for k in header[1:]:
         gs.append(k)
-gr["Num"]= nm
+        
 gr["Date"]=dat
 gr["Gas"]= gs
 gr["Valor"]= va
