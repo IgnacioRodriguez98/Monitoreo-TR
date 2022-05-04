@@ -303,8 +303,8 @@ for i in range(len(q)):
 gr["Date"]=dat
 gr["Gas"]= gs
 gr["Valor"]= va
-
-gr["Anomalias"]=gr["Anomalias"].replace(1, 0)
+st. write(gr["Anomalias"])
+#gr["Anomalias"]=gr["Anomalias"].replace(1, 0)
 if st.button("Simulación tiempo real"):
     fig = px.bar(gr, x= "Gas", y= "Valor", color="Gas",
     animation_frame= "Date", 
