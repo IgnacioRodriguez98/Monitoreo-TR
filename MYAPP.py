@@ -5,6 +5,8 @@ import pandas as pd
 import time
 import numpy as np
 from sklearn.ensemble import IsolationForest
+from pyod.models.auto_encoder import AutoEncoder
+from sklearn.preprocessing import StandardScaler
 
 
 with st.sidebar:
@@ -12,9 +14,10 @@ with st.sidebar:
      "Lenguage / Idioma" ,
      ('English', 'Español'))
 ##########################################################
-
 st.write(option)
+
 ##########################################################
+
 with st.sidebar:
     st.write("# Variables")
     database = st.radio(
@@ -116,9 +119,6 @@ fig = px.line(db)
 st.write(fig)
 
 #### AUTOENCODER
-from pyod.models.auto_encoder import AutoEncoder
-from sklearn.preprocessing import StandardScaler
-import matplotlib.pyplot as plt
 gases = []
 if len(header) == 2:
     gases = [0]
@@ -304,6 +304,7 @@ gr["Date"]=dat
 gr["Gas"]= gs
 gr["Valor"]= va
 
+gr["Anomalias"].replace(1, 0, inplace=True)
 if st.button("Simulación tiempo real"):
     fig = px.bar(gr, x= "Gas", y= "Valor", color="Gas",
     animation_frame= "Date", 
