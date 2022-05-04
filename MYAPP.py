@@ -120,6 +120,7 @@ else:
 
     st.write(q)
     st.write(gr)
+    st.write(p)
     if st.button("Simulación tiempo real"):
         #st.write(len(q))
         fig = px.bar(gr, x= "Gas", y= "Valor", color="Gas",
