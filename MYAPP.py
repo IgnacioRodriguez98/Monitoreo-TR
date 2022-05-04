@@ -94,59 +94,59 @@ if len(lista)> 0:
 if C2H2== False |H2 == False | C2H4 == False |CO == False |C2H6 ==False |CH4 == False:
    p="""### No hay gases seleccionados, por favor selecciona al menos uno"""
 
-if p != """### No hay gases seleccionados, por favor selecciona al menos uno""":
-    q = p
-    q.columns = header
-    q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
-    gs = []
-    dat = []
-    va = []
-    c = 0
-    gr = pd.DataFrame()
-    for i in range(len(q)):
-        for k in range(len(header[1:])):
-            dat.append(q["Date"][i])
-        for k in header[1:]:
-            va.append(q[k][i])
-        for k in header[1:]:
-            gs.append(k)
-    gr["Num"]= nm
-    gr["Date"]=dat
-    gr["Gas"]= gs
-    gr["Valor"]= va
+st.write(type(p))
+q = p
+q.columns = header
+q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
+gs = []
+dat = []
+va = []
+c = 0
+gr = pd.DataFrame()
+for i in range(len(q)):
+    for k in range(len(header[1:])):
+        dat.append(q["Date"][i])
+    for k in header[1:]:
+        va.append(q[k][i])
+    for k in header[1:]:
+        gs.append(k)
+gr["Num"]= nm
+gr["Date"]=dat
+gr["Gas"]= gs
+gr["Valor"]= va
 
 
-    st.write(q)
-    st.write(gr)
-    if st.button("Simulación tiempo real"):
-        #st.write(len(q))
-        fig = px.bar(gr, x= "Gas", y= "Valor", color="Gas",
-        animation_frame= "Date", 
-        animation_group= "Gas")
-        fig.update_layout(width=800)
-        st.write(fig)
+st.write(q)
+st.write(gr)
+if st.button("Simulación tiempo real"):
+    #st.write(len(q))
+    fig = px.bar(gr, x= "Gas", y= "Valor", color="Gas",
+    animation_frame= "Date", 
+    animation_group= "Gas")
+    fig.update_layout(width=800)
+    st.write(fig)
 
-    if st.button("Simulación tiempo real 2"):
-        #st.write(len(q))
-        fig = px.bar(q, x= "Gas", y= "Valor", color="Gas",
-        animation_frame= "Date", 
-        animation_group= "Gas")
-        fig.update_layout(width=800)
-        st.write(fig)
+if st.button("Simulación tiempo real 2"):
+    #st.write(len(q))
+    fig = px.bar(q, x= "Gas", y= "Valor", color="Gas",
+    animation_frame= "Date", 
+    animation_group= "Gas")
+    fig.update_layout(width=800)
+    st.write(fig)
 
-    if st.button("Matplotlib animation"):
-        plt.rcParams["figure.figsize"] = [7.00, 3.50]
-        plt.rcParams["figure.autolayout"] = True
-        fig, ax = plt.subplots()
-        ax.set(xlim=(-3, 3), ylim=(-1, 1))
-        x = np.linspace(-3, 3, 91)
-        t = np.linspace(1, 25, 30)
-        X2, T2 = np.meshgrid(x, t)
-        sinT2 = np.sin(2 * np.pi * T2 / T2.max())
-        F = 0.9 * sinT2 * np.sinc(X2 * (1 + sinT2))
-        line, = ax.plot(x, F[0, :], color='k', lw=2)
-        def animate(i):
-            line.set_ydata(F[i, :])
-        anim = animation.FuncAnimation(fig, animate, interval=100, frames=len(t) - 1)
-        anim.save('503.gif')
-        st.write(plt)
+if st.button("Matplotlib animation"):
+    plt.rcParams["figure.figsize"] = [7.00, 3.50]
+    plt.rcParams["figure.autolayout"] = True
+    fig, ax = plt.subplots()
+    ax.set(xlim=(-3, 3), ylim=(-1, 1))
+    x = np.linspace(-3, 3, 91)
+    t = np.linspace(1, 25, 30)
+    X2, T2 = np.meshgrid(x, t)
+    sinT2 = np.sin(2 * np.pi * T2 / T2.max())
+    F = 0.9 * sinT2 * np.sinc(X2 * (1 + sinT2))
+    line, = ax.plot(x, F[0, :], color='k', lw=2)
+    def animate(i):
+        line.set_ydata(F[i, :])
+    anim = animation.FuncAnimation(fig, animate, interval=100, frames=len(t) - 1)
+    anim.save('503.gif')
+    st.write(plt)
