@@ -307,7 +307,7 @@ gr["Date"]=dat
 gr["Gas"]= gs
 gr["Valor"]= va
 if st.button("Simulación tiempo real"):
-    fig = px.bar(gr, x= "Gas", y= "Valor",  color_discrete_sequence=px.colors.qualitative.Set1,
+    fig = px.bar(gr, x= "Gas", y= "Valor", 
     color_discrete_map={
                 "Anomalias": "#E52323",
                 "Acetileno": "#FEAF3E",
