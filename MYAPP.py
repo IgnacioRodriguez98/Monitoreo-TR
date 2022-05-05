@@ -25,7 +25,7 @@ Esta es una aplicación enfocada a la detección de anomalías en los gases que 
 podemos realizar un análisis individual por cada gas, así como un análisis multivariado con 2 o más gases a la vez.
 
 Los gases a analizar son los conocidos como "Gases Combustibles" 
-#### Acetileno, Hidrógeno, Etileno, Monóxido de Carbono, Etano y Metano.
+##### Acetileno, Hidrógeno, Etileno, Monóxido de Carbono, Etano y Metano.
 """)
 
 ##########################################################
