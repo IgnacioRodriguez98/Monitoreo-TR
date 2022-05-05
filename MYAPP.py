@@ -282,7 +282,7 @@ else:
             plt.title("Metano")
             plt.legend()
             plt.show();
-            st.write(fig4,ax)    
+            st.write(fig4,ax)   
     # visualization
 
     header.append("Anomalias")
