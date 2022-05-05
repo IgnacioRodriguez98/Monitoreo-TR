@@ -312,6 +312,7 @@ colors["Anomalias"] = "#E52323"
 gr["Date"]=dat
 gr["Gas"]= gs
 gr["Valor"]= va
+st.write[colors]
 if st.button("Simulación tiempo real"):
     fig = px.bar(gr, x= "Gas", y= "Valor",color="Gas", 
     color_discrete_map=colors,
