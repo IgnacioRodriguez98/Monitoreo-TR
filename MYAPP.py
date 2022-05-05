@@ -286,7 +286,7 @@ else:
 
     header.append("Anomalias")
     q["Anomalias"]=q["Anomalias"].replace(1, 0)
-    q["Anomalias"]=q["Anomalias"].replace(-1, q[header[1:]].max().max() + 2)
+    q["Anomalias"]=q["Anomalias"].replace(-1, q[header[1:]].max().max())
     gs = []
     dat = []
     va = []
@@ -318,5 +318,5 @@ else:
         color_discrete_map=colores, animation_frame= "Date", 
         animation_group= "Gas")
         fig.update_layout(width=800)
-        fig.update_yaxes(range=[0,gr["Valor"].max().max()])
+        fig.update_yaxes(range=[0,(gr["Valor"].max().max())//3])
         st.write(fig)
