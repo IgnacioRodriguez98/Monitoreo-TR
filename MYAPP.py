@@ -23,7 +23,6 @@ with st.sidebar:
     database = st.radio(
      "Base de datos",
      ('1 (2432 datos)', '2 (9277 datos)')
-
     st.write("# Selecciona los gases a analizar:")
     C2H2 = st.checkbox("Acetileno")
     H2 = st.checkbox("Hidrógeno")
