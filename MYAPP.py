@@ -292,7 +292,8 @@ q["Anomalias"]=q["Anomalias"].replace(-1, q[header[1:]].max().max() + 2)
 gs = []
 dat = []
 va = []
-c = ["#FEAF3E","#FBFE1D","#54FE1D","#1DBAFE","#0E5C7E","#885693"]
+co = 0
+c = ["#FEAF3E","#FBFE1D","#54FE1D","#1DBAFE","#0E5C7E","#885693","#E52323"]
 gr = pd.DataFrame()
 for i in range(len(q)):
     for k in range(len(header[1:])):
@@ -303,18 +304,24 @@ for i in range(len(q)):
         gs.append(k)
 colors= c[:len(header)]
 colors.append("#E52323")
+colors={}
+for i in header[1:]:
+    colors[i]=c[co]
+    co += 1
+colors["Anomalias"] = "#E52323" 
 gr["Date"]=dat
 gr["Gas"]= gs
 gr["Valor"]= va
-#if st.button("Simulación tiempo real"):
-fig = px.bar(gr, x= "Gas", y= "Valor",color="Gas", 
-color_discrete_map={
-            "Acetileno": "#FEAF3E",
-            "Hidrogeno": "#FBFE1D",
-            "Etileno": "#54FE1D",
-            "Monoxido de carbono": "#1DBAFE",
-            "Anomalias": "#E52323",
-            },
-animation_frame= "Date", animation_group= "Gas")
-fig.update_layout(width=800)
-st.write(fig)
+if st.button("Simulación tiempo real"):
+    fig = px.bar(gr, x= "Gas", y= "Valor",color="Gas", 
+    color_discrete_map=colors,
+    #color_discrete_map={
+    #            "Acetileno": "#FEAF3E",
+    #            "Hidrogeno": "#FBFE1D",
+    #            "Etileno": "#54FE1D",
+    #            "Monoxido de carbono": "#1DBAFE",
+    #            "Anomalias": "#E52323",
+    #            },
+    animation_frame= "Date", animation_group= "Gas")
+    fig.update_layout(width=800)
+    st.write(fig)
