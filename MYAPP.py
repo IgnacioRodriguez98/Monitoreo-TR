@@ -90,7 +90,6 @@ if len(lista)> 0:
 
     for i in lista:
         p = pd.merge(p,i,on = 0, how='outer')
-   # b = p.drop([0],inplace=True, axis=1)
 
 if C2H2== False |H2 == False | C2H4 == False |CO == False |C2H6 ==False |CH4 == False:
    p=" "
