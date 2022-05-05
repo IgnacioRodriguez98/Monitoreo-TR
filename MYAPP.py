@@ -214,9 +214,8 @@ else:
 
         if CO.columns[0]==1:
             fig4, ax = plt.subplots(figsize=(10,6))
-
             a = CO.loc[CO['anomaly'] == -1, [1]] #anomaly
-
+            st.write(a)
             ax.plot(CO.index, CO.iloc[:, [0]], color='black', label = 'Normal')
             ax.scatter(a.index,a.iloc[:, [0]], color='red', label = 'Anomaly')
             plt.title("Acetileno")
@@ -228,7 +227,7 @@ else:
             fig4, ax = plt.subplots(figsize=(10,6))
 
             a = CO.loc[CO['anomaly'] == -1, [2]] #anomaly
-
+            st.write(a)
             ax.plot(CO.index, CO.iloc[:, [0]], color='black', label = 'Normal')
             ax.scatter(a.index,a.iloc[:, [0]], color='red', label = 'Anomaly')
             plt.title("Hidrogeno")
@@ -240,7 +239,7 @@ else:
             fig4, ax = plt.subplots(figsize=(10,6))
 
             a = CO.loc[CO['anomaly'] == -1, [3]] #anomaly
-
+            st.write(a)
             ax.plot(CO.index, CO.iloc[:, [0]], color='black', label = 'Normal')
             ax.scatter(a.index,a.iloc[:, [0]], color='red', label = 'Anomaly')
             plt.title("Etileno")
@@ -252,7 +251,7 @@ else:
             fig4, ax = plt.subplots(figsize=(10,6))
 
             a = CO.loc[CO['anomaly'] == -1, [4]] #anomaly
-
+            st.write(a)
             ax.plot(CO.index, CO.iloc[:, [0]], color='black', label = 'Normal')
             ax.scatter(a.index,a.iloc[:, [0]], color='red', label = 'Anomaly')
             plt.title("Monoxido de Carbono")
@@ -264,7 +263,7 @@ else:
             fig4, ax = plt.subplots(figsize=(10,6))
 
             a = CO.loc[CO['anomaly'] == -1, [5]] #anomaly
-
+            st.write(a)
             ax.plot(CO.index, CO.iloc[:, [0]], color='black', label = 'Normal')
             ax.scatter(a.index,a.iloc[:, [0]], color='red', label = 'Anomaly')
             plt.title("Etano")
@@ -276,7 +275,7 @@ else:
             fig4, ax = plt.subplots(figsize=(10,6))
 
             a = CO.loc[CO['anomaly'] == -1, [6]] #anomaly
-
+            st.write(a)
             ax.plot(CO.index, CO.iloc[:, [0]], color='black', label = 'Normal')
             ax.scatter(a.index,a.iloc[:, [0]], color='red', label = 'Anomaly')
             plt.title("Metano")
@@ -311,6 +310,7 @@ else:
     gr["Date"]=dat
     gr["Gas"]= gs
     gr["Valor"]= va
+    st.write(q)
     #st.write[type(colores)]
     if st.button("Simulación tiempo real"):
         fig = px.bar(gr, x= "Gas", y= "Valor",color="Gas", 
