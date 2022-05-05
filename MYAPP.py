@@ -309,11 +309,11 @@ gr["Valor"]= va
 if st.button("Simulación tiempo real"):
     fig = px.bar(gr, x= "Gas", y= "Valor",  color_discrete_sequence=px.colors.qualitative.Set1,
     color_discrete_map={
-                "Anomalias": "red",
-                "Acetileno": "green",
-                "Hidrogeno": "blue",
-                "Etileno": "goldenrod",
-                "Monoxido de carbono": "magenta"},
+                "Anomalias": "#E52323",
+                "Acetileno": "#FEAF3E",
+                "Hidrogeno": "#FBFE1D",
+                "Etileno": "#54FE1D",
+                "Monoxido de carbono": "#1DBAFE"},
     animation_frame= "Date", 
     animation_group= "Gas")
     fig.update_layout(width=800)
