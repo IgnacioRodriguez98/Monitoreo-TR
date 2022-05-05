@@ -9,12 +9,21 @@ from pyod.models.auto_encoder import AutoEncoder
 from sklearn.preprocessing import StandardScaler
 
 
+###################################Variables de lenguaje###########################################
+
+
+
 with st.sidebar:
     option = st.selectbox(
      "Lenguage / Idioma" ,
      ('English', 'Español'))
 ##########################################################
-st.write(option)
+
+st.write("""Esta es una aplicación enfocada a la detección de anomalías en los gases que se generan dentro de un transformador; 
+podemos realizar un análisis individual por cada gas, así como un análisis multivariado con 2 o más gases a la vez.
+
+Los gases a analizar son los siguientes: Acetileno, Hidrógeno, Etileno, Monóxido de Carbono, Etano y Metano.
+A  estos gases le conoce como gases combustibles. """)
 
 ##########################################################
 
