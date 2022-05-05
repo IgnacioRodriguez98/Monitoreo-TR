@@ -312,17 +312,10 @@ colores["Anomalias"] = "#E52323"
 gr["Date"]=dat
 gr["Gas"]= gs
 gr["Valor"]= va
-st.write[type(colores)]
+#st.write[type(colores)]
 if st.button("Simulación tiempo real"):
     fig = px.bar(gr, x= "Gas", y= "Valor",color="Gas", 
-    color_discrete_map=colores,
-    #color_discrete_map={
-    #            "Acetileno": "#FEAF3E",
-    #            "Hidrogeno": "#FBFE1D",
-    #            "Etileno": "#54FE1D",
-    #            "Monoxido de carbono": "#1DBAFE",
-    #            "Anomalias": "#E52323",
-    #            },
-    animation_frame= "Date", animation_group= "Gas")
+    color_discrete_map=colores, animation_frame= "Date", 
+    animation_group= "Gas")
     fig.update_layout(width=800)
     st.write(fig)
