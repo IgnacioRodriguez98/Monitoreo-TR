@@ -312,10 +312,10 @@ colores["Anomalias"] = "#E52323"
 gr["Date"]=dat
 gr["Gas"]= gs
 gr["Valor"]= va
-st.write[colores]
+#st.write[colores]
 if st.button("Simulación tiempo real"):
     fig = px.bar(gr, x= "Gas", y= "Valor",color="Gas", 
-    color_discrete_map=colors,
+    color_discrete_map=colores,
     #color_discrete_map={
     #            "Acetileno": "#FEAF3E",
     #            "Hidrogeno": "#FBFE1D",
