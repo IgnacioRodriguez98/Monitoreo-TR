@@ -180,7 +180,7 @@ else:
         df_test['cluster'].value_counts()
 
         t = df_test.groupby('cluster').mean()
-        indices = pd.DataFrame(np.where(y_test_scores > (t["score"].min()+(t["score"].max()//2.3))))
+        indices = pd.DataFrame(np.where(y_test_scores > (t["score"].min()+(t["score"].max()//2.1))))
         st.write(indices)
         for i, j  in indices.iteritems():
             q["Anomalias"][j]=-1
