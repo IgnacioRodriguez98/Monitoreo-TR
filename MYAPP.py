@@ -139,7 +139,7 @@ else:
         gases = [0,1,2,3,4,5]
 
     elif len(header) == 1:
-    st.write("Por favor escoge los gases a analizar")
+        st.write("Por favor escoge los gases a analizar")
 
     q["Anomalias"]=np.ones(len(p)) ##################
 
