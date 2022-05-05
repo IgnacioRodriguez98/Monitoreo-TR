@@ -304,15 +304,15 @@ for i in range(len(q)):
         gs.append(k)
 #colors= c[:len(header)]
 #colors.append("#E52323")
-colors={}
+colores={}
 for i in header[1:]:
-    colors[i]=c[co]
+    colores[i]=c[co]
     co += 1
-colors["Anomalias"] = "#E52323" 
+colores["Anomalias"] = "#E52323" 
 gr["Date"]=dat
 gr["Gas"]= gs
 gr["Valor"]= va
-st.write[colors]
+st.write[colores]
 if st.button("Simulación tiempo real"):
     fig = px.bar(gr, x= "Gas", y= "Valor",color="Gas", 
     color_discrete_map=colors,
