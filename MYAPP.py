@@ -318,4 +318,5 @@ else:
         color_discrete_map=colores, animation_frame= "Date", 
         animation_group= "Gas")
         fig.update_layout(width=800)
+        fig.update_yaxes(range=[0,gr["Valor"].max().max()])
         st.write(fig)
