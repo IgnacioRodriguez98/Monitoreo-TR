@@ -315,7 +315,7 @@ if st.button("Simulación tiempo real"):
                 "Monoxido de carbono": "#1DBAFE",
                 "Anomalias": "#E52323",
                 },
-    #animation_frame= "Date", 
-    #animation_group= "Gas")
+    animation_frame= "Date", 
+    animation_group= "Gas")
     fig.update_layout(width=800)
     st.write(fig)
