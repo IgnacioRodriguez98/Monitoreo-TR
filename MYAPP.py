@@ -312,7 +312,7 @@ if st.button("Simulación tiempo real"):
     fig.update_layout(width=800)
     st.write(fig)
 
-#st.write(q)
+st.write(q)
 #st.write(gr)
 #st.write(p)
 #st.write(q[header[1:]].max().max())
