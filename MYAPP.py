@@ -288,6 +288,7 @@ if len(header) == 2:
 
 header.append("Anomalias")
 q["Anomalias"]=q["Anomalias"].replace(1, 0)
+q["Anomalias"]=q["Anomalias"].replace(-1, q[header[1:]].max().max() + 2)
 gs = []
 dat = []
 va = []
@@ -311,8 +312,8 @@ if st.button("Simulación tiempo real"):
     fig.update_layout(width=800)
     st.write(fig)
 
-st.write(q)
-st.write(gr)
-st.write(p)
-st.write(q[header[1:]].max().max())
+#st.write(q)
+#st.write(gr)
+#st.write(p)
+#st.write(q[header[1:]].max().max())
 #st.write(gr[:,1:].max().max())
