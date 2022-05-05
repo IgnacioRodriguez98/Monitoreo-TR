@@ -292,7 +292,7 @@ q["Anomalias"]=q["Anomalias"].replace(-1, q[header[1:]].max().max() + 2)
 gs = []
 dat = []
 va = []
-c = 0
+c = ["#FEAF3E","#FBFE1D","#54FE1D","#1DBAFE","#0E5C7E","#885693"]
 gr = pd.DataFrame()
 for i in range(len(q)):
     for k in range(len(header[1:])):
@@ -301,12 +301,13 @@ for i in range(len(q)):
         va.append(q[k][i])
     for k in header[1:]:
         gs.append(k)
-        
+colors= c[:len(header)]
+colors.append("#E52323")
 gr["Date"]=dat
 gr["Gas"]= gs
 gr["Valor"]= va
 if st.button("Simulación tiempo real"):
-    fig = px.bar(gr, x= "Gas", y= "Valor", color="Gas",
+    fig = px.bar(gr, x= "Gas", y= "Valor", color=colors,
     animation_frame= "Date", 
     animation_group= "Gas")
     fig.update_layout(width=800)
