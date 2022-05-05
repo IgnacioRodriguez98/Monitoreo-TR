@@ -160,7 +160,7 @@ else:
         X_test = StandardScaler().fit_transform(X_test)
         X_test = pd.DataFrame(X_test)
 
-        clf = AutoEncoder(hidden_neurons =[25, 2, 2, 25],contamination=.01)
+        clf = AutoEncoder(hidden_neurons =[25, 2, 2, 25],contamination=.3)
         clf.fit(X_train)
 
     # Get the outlier scores for the train data
