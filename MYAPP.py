@@ -41,12 +41,6 @@ elif database == '2 (9277 datos)':
     st.write("""# Has seleccionado la base de datos 2""")
     df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/planta3.csv', header=None)
     st.write(df)
-
-
-else:
-    st.write("""# Has seleccionado la base de datos 3""")
-    df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/planta1.csv', header=None)
-    st.write(df)
 ##################### SELECCION DE GASES ######################
 
 #with st.sidebar:
