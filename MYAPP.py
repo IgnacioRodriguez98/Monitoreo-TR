@@ -42,6 +42,7 @@ elif database == '2 (9277 datos)':
     df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/planta3.csv', header=None)
     st.write(df)
 
+
 else:
     st.write("""# Has seleccionado la base de datos 3""")
     df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/planta1.csv', header=None)
