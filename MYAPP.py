@@ -311,6 +311,7 @@ else:
     gr["Gas"]= gs
     gr["Valor"]= va
     st.write(q)
+    st.write(gr)
     #st.write[type(colores)]
     if st.button("Simulación tiempo real"):
         fig = px.bar(gr, x= "Gas", y= "Valor",color="Gas", 
