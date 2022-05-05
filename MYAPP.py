@@ -307,14 +307,9 @@ gr["Date"]=dat
 gr["Gas"]= gs
 gr["Valor"]= va
 if st.button("Simulación tiempo real"):
-    fig = px.bar(gr, x= "Gas", y= "Valor",  marker_color=colors,
+    fig = px.bar(gr, x= "Gas", y= "Valor",  color=colors,
+    color_discrete_map="identity",
     animation_frame= "Date", 
     animation_group= "Gas")
     fig.update_layout(width=800)
     st.write(fig)
-
-st.write(q)
-#st.write(gr)
-#st.write(p)
-#st.write(q[header[1:]].max().max())
-#st.write(gr[:,1:].max().max())
