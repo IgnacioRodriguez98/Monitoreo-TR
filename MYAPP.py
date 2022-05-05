@@ -302,8 +302,8 @@ for i in range(len(q)):
         va.append(q[k][i])
     for k in header[1:]:
         gs.append(k)
-colors= c[:len(header)]
-colors.append("#E52323")
+#colors= c[:len(header)]
+#colors.append("#E52323")
 colors={}
 for i in header[1:]:
     colors[i]=c[co]
