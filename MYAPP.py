@@ -67,6 +67,12 @@ else:
 ##################### SELECCION DE GASES ######################
 
 if st.button("Comenzar"):
+    st.write("""# 1er Paso: Selección de variables
+    
+    En la parte superior izquierda se encuentra un menú desplegable en la cuál deberá seleccionar: 
+    la base de datos a utilizar y los gases a analizar
+    """)
+
 
     lista = []
     header = ["Date"]
