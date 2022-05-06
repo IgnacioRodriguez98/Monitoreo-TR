@@ -60,38 +60,55 @@ else:
 
 ##########################################################
 
-with st.sidebar:
-    st.write("# Variables")
-    database = st.radio(
-     "Base de datos",
-     ('Planta 1 (2,432 datos)', 'Planta 2 (9,277 datos)', 'Planta 3 (10,000 datos)'))
+if option == "Español":
+    with st.sidebar:
+        st.write("# Variables")
+        database = st.radio(
+        "Base de datos",
+        ('Planta 1 (2,432 datos)', 'Planta 2 (9,277 datos)', 'Planta 3 (10,000 datos)'))
 
-    st.write("# Gases:")
-    C2H2 = st.checkbox("Acetileno")
-    H2 = st.checkbox("Hidrógeno")
-    C2H4 = st.checkbox("Etileno")
-    CO = st.checkbox("Monóxido de carbono")
-    C2H6 = st.checkbox("Etano")
-    CH4 = st.checkbox("Metano")
+        st.write("# Gases:")
+        C2H2 = st.checkbox("Acetileno")
+        H2 = st.checkbox("Hidrógeno")
+        C2H4 = st.checkbox("Etileno")
+        CO = st.checkbox("Monóxido de carbono")
+        C2H6 = st.checkbox("Etano")
+        CH4 = st.checkbox("Metano")
+        
+        if database == 'Planta 1 (2,432 datos)':
+            df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/planta2.csv', header=None)
 
-if database == 'Planta 1 (2,432 datos)':
-    #st.write("""# Has seleccionado la base de datos 1""")
-    #df = pd.read_csv('https://docs.google.com/spreadsheets/d/1iuC6jPlFf5sbzM-E6u-L2FMQR8AjEpCQ0ZJyCpwTSJ4/edit?usp=sharing', header=None)
-    df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/planta2.csv', header=None)
-    #st.write(df)
+        elif database == 'Planta 2 (9,277 datos)':
+            df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/planta3.csv', header=None)
 
-elif database == 'Planta 2 (9,277 datos)':
-    #st.write("""# Has seleccionado la base de datos 2""")
-    #df= pd.read_csv('https://docs.google.com/spreadsheets/d/1-hiYI8sBIcoMXOvw0pCFOnnhrD-9f7ZW3A_EHuONlso/edit?usp=sharing', header=None)
-    df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/planta3.csv', header=None)
-    #st.write(df)
-
+        else:
+            df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/planta1.csv', header=None)
 
 else:
-    #st.write("""# Has seleccionado la base de datos 3""")
-    #df= pd.read_csv('https://docs.google.com/spreadsheets/d/1R8YZq8Ex6YdRenFnisb7Ic_g1yRRoNQmmjUPxSbnufE/edit?usp=sharing', header=None)
-    df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/planta1.csv', header=None)
-    #st.write(df)
+    with st.sidebar:
+        st.write("# Variables")
+        database = st.radio(
+        "Database",
+        ('Factory 1 (2,432 data)', 'Factory 2 (9,277 data)', 'Factory 3 (10,000 data)'))
+
+        st.write("# Gases:")
+        C2H2 = st.checkbox("Acetylene")
+        H2 = st.checkbox("Hydrogen")
+        C2H4 = st.checkbox("Ethylene")
+        CO = st.checkbox("Carbon Monoxide")
+        C2H6 = st.checkbox("Ethane")
+        CH4 = st.checkbox("Methane")
+
+        if database == 'Planta 1 (2,432 datos)':
+            df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/planta2.csv', header=None)
+
+        elif database == 'Planta 2 (9,277 datos)':
+            df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/planta3.csv', header=None)
+
+        else:
+            df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/planta1.csv', header=None)
+
+
 ##################### SELECCION DE GASES ######################
 st.write("""# 1er Paso: Selección de base de datos
 
