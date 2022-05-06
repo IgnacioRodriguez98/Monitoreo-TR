@@ -190,27 +190,53 @@ if len(lista)> 0:
     q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
 ############################# Boton de Inicio #############################
 if st.button(bt):
-    st.write("""# Modelos de Machine Learning
-    
-    Para la logra la detección de anomalias en esta app se hace uso de dos modelos de Machine Learning,
-    Autoencoder para cuando se desea detectar anomalias en 2 o más gases y 
-    Isolation Forest, cuando solamente se analiza un gas.""")
-    
-    if len(header) > 2:
+    if option == "Español":
+        st.write("""# Modelos de Machine Learning
+        
+        Para lograr la detección de anomalias en esta app se hace uso de dos modelos de Machine Learning,
+        Autoencoder para cuando se desea detectar anomalias en 2 o más gases y 
+        Isolation Forest, cuando solamente se analiza un gas.""")
+        
+        if len(header) > 2:
 
-        st.write("## Autoencoder")
-        st.write("""Los autoencoders son redes neuronales artificiales, entrenadas de manera no supervisada,que tienen como objetivo
-        aprender primero las representaciones codificadas de nuestros datos y luego generar los datos de entrada
-        a partir de las representaciones codificadas aprendidas.""")
-    
+            st.write("## Autoencoder")
+            st.image('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/Autoencoder.png',width= 600)
+            st.write("""Los autoencoders son redes neuronales artificiales, entrenadas de manera no supervisada,que tienen como objetivo
+            aprender primero las representaciones codificadas de nuestros datos y luego generar los datos de entrada
+            a partir de las representaciones codificadas aprendidas.""")
+        
+        else:
+
+            st.write("## Isolation Forest")
+            st.image('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/isolation%20forest.png',width= 600)
+            st.write("""En un bosque de aislamiento, los datos se submuestrean aleatoriamente, 
+            estos se procesan en una estructura de árbol basada en características 
+            seleccionadas aleatoriamente.
+            """)
     else:
+        st.write("""# Machine Learning models""")
+        
+        st.write("""To achieve the detection of anomalies in this app, two Machine Learning models are used,
+         Autoencoder for when you want to detect anomalies in 2 or more gases and
+         Isolation Forest, when only one gas is analyzed.""")
+        
+        if len(header) > 2:
 
-        st.write("## Isolation Forest")
+            st.write("## Autoencoder")
+            st.image('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/Autoencoder.png',width= 600)
+            st.write("""Autoencoders are artificial neural networks, trained in an unsupervised manner, which aim to
+             first learn the encoded representations of our data and then generate the input data
+             from the learned encoded representations.""")
+        
+        else:
 
-        st.write("""En un bosque de aislamiento, los datos se submuestrean aleatoriamente, 
-        estos se procesan en una estructura de árbol basada en características 
-        seleccionadas aleatoriamente.
-        """)
+            st.write("## Isolation Forest")
+            st.image('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/isolation%20forest.png',width= 600)
+            st.write("""In an isolation forest, the data is randomly subsampled,
+            these are processed in a feature-based tree structure
+            randomly selected.
+            """)
+
     ######### Reproduccion tiempo real
     db = []
     p.drop([0],inplace=True, axis=1)
@@ -223,7 +249,10 @@ if st.button(bt):
 
     ############## Grafica
     fig = px.line(db)
-    st.write(""" ### Valores de los gases seleccionados a través del tiempo.""")
+    if option == "Español":
+        st.write(""" ### Valores de los gases seleccionados a través del tiempo.""")
+    else:
+        st.write(""" ### Values of selected gases over time.""")
     st.write(fig)
     
 
@@ -302,16 +331,29 @@ if st.button(bt):
         plt.ylabel('Gases')
         plt.show();
      
-        st.write("""### Comportamiento de los gases agrupados según sus valores""")
+        if option == "Español":
+            st.write("""### Comportamiento de los gases agrupados según sus valores""")
+        else:
+            st.write("""### Behavior of gases grouped according to their values""")
         st.write(fig3)
 
-        st.write("""Permite definir valores “normales” y valores “anómalos”.""")
+        if option == "Español":
+            st.write("""Permite definir valores “normales” y valores “anómalos”.""")
+        else:
+            st.write("""It allows to define “normal” values and “abnormal” values.""")
 
-        st.write("""### Resultado del modelo""")        
+        if option == "Español":
+            st.write("""### Resultado del modelo""") 
+        else:
+            st.write("""### Model Output""")       
         st.write(fig2)
         
-        st.write("""Las lineas verticales (rojas) son las anomalias detectadas por el Autoencoder, 
-        estas representan el momento en la que el conjunto de gases salen de su comportamiento “normal”.""")
+        if option == "Español":
+            st.write("""Las lineas verticales (rojas) son las anomalias detectadas por el Autoencoder, 
+            estas representan el momento en la que el conjunto de gases salen de su comportamiento “normal”.""")
+        else:
+            st.write("""The vertical lines (red ones) are the anomalies detected by the Autoencoder,
+            these represent the moment in which the set of gases leave their "normal" behavior.""")
     
         
 
@@ -339,9 +381,14 @@ if st.button(bt):
             plt.title("Acetileno")
             plt.legend()
             plt.show();
-            st.write("### Comportamiento del gas con anomalias detectadas")
-            st.write(fig4)
-            st.write("Los puntos rojos son nuestros puntos anómalos en el gas correspondiente.")
+            if option == "Español":
+                st.write("### Comportamiento del gas con anomalias detectadas")
+                st.write(fig4)
+                st.write("Los puntos rojos son los comportamientos anómalos en el gas correspondiente.")
+            else:
+                st.write("### Gas behavior with detected anomalies")
+                st.write(fig4)
+                st.write("The red dots are the anomalous behaviors in the corresponding gas.")
 
         elif CO.columns[0]==2:
             fig4, ax = plt.subplots(figsize=(10,6))
@@ -353,9 +400,14 @@ if st.button(bt):
             plt.title("Hidrogeno")
             plt.legend()
             plt.show();
-            st.write("### Comportamiento del gas con anomalias detectadas")
-            st.write(fig4)
-            st.write("Los puntos rojos son nuestros puntos anómalos en el gas correspondiente.")
+            if option == "Español":
+                st.write("### Comportamiento del gas con anomalias detectadas")
+                st.write(fig4)
+                st.write("Los puntos rojos son los comportamientos anómalos en el gas correspondiente.")
+            else:
+                st.write("### Gas behavior with detected anomalies")
+                st.write(fig4)
+                st.write("The red dots are the anomalous behaviors in the corresponding gas."))
 
         elif CO.columns[0]==3:
             fig4, ax = plt.subplots(figsize=(10,6))
@@ -367,9 +419,14 @@ if st.button(bt):
             plt.title("Etileno")
             plt.legend()
             plt.show();
-            st.write("### Comportamiento del gas con anomalias detectadas")
-            st.write(fig4)
-            st.write("Los puntos rojos son nuestros puntos anómalos en el gas correspondiente.")
+            if option == "Español":
+                st.write("### Comportamiento del gas con anomalias detectadas")
+                st.write(fig4)
+                st.write("Los puntos rojos son los comportamientos anómalos en el gas correspondiente.")
+            else:
+                st.write("### Gas behavior with detected anomalies")
+                st.write(fig4)
+                st.write("The red dots are the anomalous behaviors in the corresponding gas.")
 
         elif CO.columns[0]==4:
             fig4, ax = plt.subplots(figsize=(10,6))
@@ -381,9 +438,14 @@ if st.button(bt):
             plt.title("Monoxido de Carbono")
             plt.legend()
             plt.show();
-            st.write("### Comportamiento del gas con anomalias detectadas")
-            st.write(fig4)
-            st.write("Los puntos rojos son nuestros puntos anómalos en el gas correspondiente.")
+            if option == "Español":
+                st.write("### Comportamiento del gas con anomalias detectadas")
+                st.write(fig4)
+                st.write("Los puntos rojos son los comportamientos anómalos en el gas correspondiente.")
+            else:
+                st.write("### Gas behavior with detected anomalies")
+                st.write(fig4)
+                st.write("The red dots are the anomalous behaviors in the corresponding gas.")
             
         elif CO.columns[0]==5:
             fig4, ax = plt.subplots(figsize=(10,6))
@@ -395,9 +457,14 @@ if st.button(bt):
             plt.title("Etano")
             plt.legend()
             plt.show();
-            st.write("### Comportamiento del gas con anomalias detectadas")
-            st.write(fig4)
-            st.write("Los puntos rojos son nuestros puntos anómalos en el gas correspondiente.")
+            if option == "Español":
+                st.write("### Comportamiento del gas con anomalias detectadas")
+                st.write(fig4)
+                st.write("Los puntos rojos son los comportamientos anómalos en el gas correspondiente.")
+            else:
+                st.write("### Gas behavior with detected anomalies")
+                st.write(fig4)
+                st.write("The red dots are the anomalous behaviors in the corresponding gas."))
 
         elif CO.columns[0]==6:
             fig4, ax = plt.subplots(figsize=(10,6))
@@ -409,9 +476,14 @@ if st.button(bt):
             plt.title("Metano")
             plt.legend()
             plt.show();
-            st.write("### Comportamiento del gas con anomalias detectadas")
-            st.write(fig4) 
-            st.write("Los puntos rojos son nuestros puntos anómalos en el gas correspondiente.")  
+            if option == "Español":
+                st.write("### Comportamiento del gas con anomalias detectadas")
+                st.write(fig4)
+                st.write("Los puntos rojos son los comportamientos anómalos en el gas correspondiente.")
+            else:
+                st.write("### Gas behavior with detected anomalies")
+                st.write(fig4)
+                st.write("The red dots are the anomalous behaviors in the corresponding gas."))  
     
     # visualization
 
@@ -441,8 +513,12 @@ if st.button(bt):
     gr["Date"]=dat
     gr["Gas"]= gs
     gr["Valor"]= va
-    st.write("# Simulación de detección de anomalias en tiempo real")
-    st.write("""Indice de fechas de las anomalias detectadas:""")
+    if option == "Español":
+        st.write("# Simulación de detección de anomalias en tiempo real")
+        st.write("""Fechas donde se detectaron anomalías:""")
+    else:
+        st.write("# Real-time anomaly detection simulation")
+        st.write("""Dates where anomalies were detected:""")
     st.write(q["Date"].loc[(q['Anomalias']> 0)])
 
     fig = px.bar(gr, x= "Gas", y= "Valor",color="Gas", 
@@ -451,16 +527,28 @@ if st.button(bt):
     fig.update_layout(width=800)
     fig.update_yaxes(range=[0,(gr["Valor"].max().max())//3])
     st.write(fig)
-    st.write("""Simulación de la recabación de los datos a traves de un periodo de tiempo.
-    #### El valor asignado a la anomalia es simbolico y solo sirve como representación de su existencia.""")
+    if option == "Español":
+        st.write("""Simulación de la recabación de los datos a traves de un periodo de tiempo.
+        #### El valor asignado a la anomalia es simbolico y solo sirve como representación de su existencia.""")
 
-    st.write("""Es importante mencionar que los parámetros de los modelos son modificables para lograr  
-    tener mayor o menor tolerancia al comportamiento, según sea la necesidad de cada caso.""")
+        st.write("""Es importante mencionar que los parámetros de los modelos son modificables para lograr  
+        tener mayor o menor tolerancia al comportamiento, según sea la necesidad de cada caso.""")
 
-    st.write("# Aplicación en otros ambitos")
-    st.write("""Si bien, en este ejemplo hablamos de gases dentro de un transformador, este procedimiento
-    puede es aplicable para la medición de gases en cualquier circunstancia siempre y cuando se tenga equipo 
-    con cual tomar y guardar mediciones en una base de datos para poderlos procesar.""")
+        st.write("# Aplicación en otros ambitos")
+        st.write("""Si bien, en este ejemplo hablamos de gases dentro de un transformador, este procedimiento
+        puede es aplicable para la medición de gases en cualquier circunstancia siempre y cuando se tenga equipo 
+        con cual tomar y guardar mediciones en una base de datos para poderlos procesar.""")
+    else:
+        st.write("""Simulation of data collection over a period of time.
+     #### The value assigned to the anomaly is symbolic and only serves as a representation of its existence.""")
+        
+        st.write("""It is important to mention that the parameters of the models are modifiable to achieve
+        have greater or lesser tolerance for behavior, depending on the needs of each case.""")
+
+        st.write("# Application in other areas")
+        st.write("""Although in this example we are talking about gases inside a transformer, this procedure
+        can be applicable for the measurement of gases in any circumstance as long as you have equipment
+        with which to take and save measurements in a database to be able to process them.""")
 
 ############################# Visualizador de datos #############################
 if option == "Español":
