@@ -104,10 +104,10 @@ else:
         C2H6 = st.checkbox("Ethane")
         CH4 = st.checkbox("Methane")
 
-        if database == 'Planta 1 (2,432 datos)':
+        if database == 'Factory 1 (2,432 data)':
             df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/planta2.csv', header=None)
 
-        elif database == 'Planta 2 (9,277 datos)':
+        elif database == 'Factory 2 (9,277 data)':
             df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/planta3.csv', header=None)
 
         else:
