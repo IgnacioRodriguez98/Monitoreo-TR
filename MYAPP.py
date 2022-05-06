@@ -195,7 +195,9 @@ if len(lista)> 0:
             
             st.write("""Para lograr la detección de anomalias en esta app se hace uso de dos modelos de Machine Learning,
             Autoencoder para cuando se desea detectar anomalias en 2 o más gases y 
-            Isolation Forest, cuando solamente se analiza un gas.""")
+            Isolation Forest, cuando solamente se analiza un gas.
+            
+            La información mostrada del modelo varía si la aplicación está haciendo uso de un modelo o del otro""")
             
             if len(header) > 2:
 
@@ -218,7 +220,9 @@ if len(lista)> 0:
             
             st.write("""To achieve the detection of anomalies in this app, two Machine Learning models are used,
             Autoencoder for when you want to detect anomalies in 2 or more gases and
-            Isolation Forest, when only one gas is analyzed.""")
+            Isolation Forest, when only one gas is analyzed.
+            
+            The displayed information of the model varies if the application is using one model or the other""")
             
             if len(header) > 2:
 
