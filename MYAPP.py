@@ -361,6 +361,7 @@ if st.checkbox('Visualizar base de datos seleccionada'):
 
 if len(lista)> 0:
     if st.checkbox('Visualizar variables seleccionadas'):
+        st.write(q.drop(columns=['Date']))
         st.write(q)
 
 
