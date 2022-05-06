@@ -401,7 +401,7 @@ if st.button("Comenzar"):
 
         st.write("""Si bien, en este ejemplo hablamos de gases dentro de un transformador, este procedimiento
         puede es aplicable para la medición de gases en cualquier circunstancia siempre y cuando se tenga equipo 
-        con cual tomar y guardar mediciones en una base de datos para poderlos procesar.)
+        con cual tomar y guardar mediciones en una base de datos para poderlos procesar.""")
 
 st.write(""" ### Visualizador de variables seleccionadas""")
 
