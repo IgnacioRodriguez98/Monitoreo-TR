@@ -281,7 +281,7 @@ if st.button("Comenzar"):
             plt.title("Acetileno")
             plt.legend()
             plt.show();
-            #st.write(fig4,ax)
+            st.write(fig4,ax)
 
         elif CO.columns[0]==2:
             fig4, ax = plt.subplots(figsize=(10,6))
@@ -293,7 +293,7 @@ if st.button("Comenzar"):
             plt.title("Hidrogeno")
             plt.legend()
             plt.show();
-            #st.write(fig4,ax)
+            st.write(fig4,ax)
 
         elif CO.columns[0]==3:
             fig4, ax = plt.subplots(figsize=(10,6))
@@ -305,7 +305,7 @@ if st.button("Comenzar"):
             plt.title("Etileno")
             plt.legend()
             plt.show();
-            #st.write(fig4,ax)
+            st.write(fig4,ax)
 
         elif CO.columns[0]==4:
             fig4, ax = plt.subplots(figsize=(10,6))
@@ -317,7 +317,7 @@ if st.button("Comenzar"):
             plt.title("Monoxido de Carbono")
             plt.legend()
             plt.show();
-            #st.write(fig4,ax)
+            st.write(fig4,ax)
             
         elif CO.columns[0]==5:
             fig4, ax = plt.subplots(figsize=(10,6))
@@ -329,7 +329,7 @@ if st.button("Comenzar"):
             plt.title("Etano")
             plt.legend()
             plt.show();
-            #st.write(fig4,ax)
+            st.write(fig4,ax)
 
         elif CO.columns[0]==6:
             fig4, ax = plt.subplots(figsize=(10,6))
@@ -341,7 +341,7 @@ if st.button("Comenzar"):
             plt.title("Metano")
             plt.legend()
             plt.show();
-            #st.write(fig4,ax)   
+            st.write(fig4,ax)   
     
     # visualization
 
