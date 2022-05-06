@@ -239,6 +239,7 @@ if st.button(bt):
 
     ######### Reproduccion tiempo real
     db = []
+    st.wrtite(p)
     p.drop([0],inplace=True, axis=1)
     #st.write(p)
 
