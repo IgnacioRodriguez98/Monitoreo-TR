@@ -378,6 +378,8 @@ if st.button("Comenzar"):
         fig.update_layout(width=800)
         fig.update_yaxes(range=[0,(gr["Valor"].max().max())//3])
         st.write(fig)
+        st.write("""Se muestran los valores de los gases seleccionados a través del tiempo.
+        El valor asignado a la anomalia es simbolico y solo sirve como representación de su existencia.""")
 
 st.write(""" ### Visualizador de variables seleccionadas""")
 
