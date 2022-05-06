@@ -162,7 +162,7 @@ if st.button("Comenzar"):
     ############## Grafica
     fig = px.line(db)
     st.write(fig)
-    st.write("""Esta gráfica muestra los valores de los gases seleccionados a través del tiempo.""")
+    st.write("""Valores de los gases seleccionados a través del tiempo.""")
 
     #### AUTOENCODER
     gases = []
@@ -241,14 +241,14 @@ if st.button("Comenzar"):
      
         st.write(fig3)
 
-        st.write(""" Esta grafica muestra el comportamiento general de los datos, 
-        estos se agrupan según sus valores, permitiendo definir valores “normales” y valores “anómalos”.""")
+        st.write(""" Comportamiento de los gases agrupados según sus valores, 
+        permitiendo definir valores “normales” y valores “anómalos”.""")
 
         st.write(fig2)
         
-        st.write(""" Esta gráfrica representa una tercera parte de todos los valores; 
-        las lineas verticales (rojas) son las anomalias detectadas por el Autoencoder 
-        estas representan el momento en la que el conjunto de gases salen de su comportamiento “normal”.""")
+        st.write(""" Muestreo de la base de datos. Las lineas verticales (rojas)
+         son las anomalias detectadas por el Autoencoder, estas representan el momento en 
+         la que el conjunto de gases salen de su comportamiento “normal”.""")
     
         
 
