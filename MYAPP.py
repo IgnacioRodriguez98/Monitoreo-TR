@@ -387,12 +387,12 @@ if st.button("Comenzar"):
     st.write("""Indice de fechas de las anomalias detectadas:""")
     st.write(q["Date"].loc[(q['Anomalias']> 0)])
 
-    #fig = px.bar(gr, x= "Gas", y= "Valor",color="Gas", 
-    #color_discrete_map=colores, animation_frame= "Date", 
-    #animation_group= "Gas")
-    #fig.update_layout(width=800)
-    #fig.update_yaxes(range=[0,(gr["Valor"].max().max())//3])
-    #st.write(fig)
+    fig = px.bar(gr, x= "Gas", y= "Valor",color="Gas", 
+    color_discrete_map=colores, animation_frame= "Date", 
+    animation_group= "Gas")
+    fig.update_layout(width=800)
+    fig.update_yaxes(range=[0,(gr["Valor"].max().max())//3])
+    st.write(fig)
     st.write("""Simulación de la recabación de los datos a traves de un periodo de tiempo.
     #### El valor asignado a la anomalia es simbolico y solo sirve como representación de su existencia.""")
 
