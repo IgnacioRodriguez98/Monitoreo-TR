@@ -113,7 +113,7 @@ if option == "Español":
     st.write("""En la parte superior izquierda se encuentra una flecha, la cuál despliega un menú en la cuál deberá seleccionar
     entre 3 bases de datos disponibles; Estas corresponden a una planta distinta y están ordenadas conforme a su número de datos.
 
-    jo: Tener en cuenta que mientras más grande sea la base de datos mayor será el tiempo de ejecución. """)
+    Ojo: Tener en cuenta que mientras más grande sea la base de datos mayor será el tiempo de ejecución. """)
 
     st.write("""# 2nd Paso: Selección de gases""")
 
@@ -455,16 +455,33 @@ if st.button(bt):
     puede es aplicable para la medición de gases en cualquier circunstancia siempre y cuando se tenga equipo 
     con cual tomar y guardar mediciones en una base de datos para poderlos procesar.""")
 
-st.write(""" ### Visualizador de variables seleccionadas""")
+if option == "Español":
 
-if st.checkbox('Visualizar base de datos seleccionada'):
+    st.write(""" ### Visualizador de variables seleccionadas""")
+
+    if st.checkbox('Visualizar base de datos seleccionada'):
     headz = ["Date","Acetileno","Hidrogeno","Etileno","Monoxido de carbono","Etano","Metano"]
     r = df.copy()
     r.columns = headz
     st.write(r)
 
-if len(lista)> 0:
+    if len(lista)> 0:
     if st.checkbox('Visualizar variables seleccionadas'):
         st.write(q.drop(columns=['Date']))
+
+else:
+    
+    st.write(""" ### Selected Variables Viewer""")
+
+    if st.checkbox('Display selected database'):
+    headz = ["Date","Acetileno","Hidrogeno","Etileno","Monoxido de carbono","Etano","Metano"]
+    r = df.copy()
+    r.columns = headz
+    st.write(r)
+
+    if len(lista)> 0:
+    if st.checkbox('Display selected variables'):
+        st.write(q.drop(columns=['Date']))
+
 
 
