@@ -281,7 +281,9 @@ if st.button("Comenzar"):
             plt.title("Acetileno")
             plt.legend()
             plt.show();
-            st.write(fig4,ax)
+            st.write("### Comportamiento del gas con anomalias detectadas")
+            st.write(fig4)
+            st.write("Los puntos rojos son nuestros puntos anómalos en el gas correspondiente.")
 
         elif CO.columns[0]==2:
             fig4, ax = plt.subplots(figsize=(10,6))
@@ -293,7 +295,9 @@ if st.button("Comenzar"):
             plt.title("Hidrogeno")
             plt.legend()
             plt.show();
-            st.write(fig4,ax)
+            st.write("### Comportamiento del gas con anomalias detectadas")
+            st.write(fig4)
+            st.write("Los puntos rojos son nuestros puntos anómalos en el gas correspondiente.")
 
         elif CO.columns[0]==3:
             fig4, ax = plt.subplots(figsize=(10,6))
@@ -305,7 +309,9 @@ if st.button("Comenzar"):
             plt.title("Etileno")
             plt.legend()
             plt.show();
-            st.write(fig4,ax)
+            st.write("### Comportamiento del gas con anomalias detectadas")
+            st.write(fig4)
+            st.write("Los puntos rojos son nuestros puntos anómalos en el gas correspondiente.")
 
         elif CO.columns[0]==4:
             fig4, ax = plt.subplots(figsize=(10,6))
@@ -317,7 +323,9 @@ if st.button("Comenzar"):
             plt.title("Monoxido de Carbono")
             plt.legend()
             plt.show();
-            st.write(fig4,ax)
+            st.write("### Comportamiento del gas con anomalias detectadas")
+            st.write(fig4)
+            st.write("Los puntos rojos son nuestros puntos anómalos en el gas correspondiente.")
             
         elif CO.columns[0]==5:
             fig4, ax = plt.subplots(figsize=(10,6))
@@ -329,7 +337,9 @@ if st.button("Comenzar"):
             plt.title("Etano")
             plt.legend()
             plt.show();
-            st.write(fig4,ax)
+            st.write("### Comportamiento del gas con anomalias detectadas")
+            st.write(fig4)
+            st.write("Los puntos rojos son nuestros puntos anómalos en el gas correspondiente.")
 
         elif CO.columns[0]==6:
             fig4, ax = plt.subplots(figsize=(10,6))
@@ -341,7 +351,9 @@ if st.button("Comenzar"):
             plt.title("Metano")
             plt.legend()
             plt.show();
-            st.write(fig4,ax)   
+            st.write("### Comportamiento del gas con anomalias detectadas")
+            st.write(fig4) 
+            st.write("Los puntos rojos son nuestros puntos anómalos en el gas correspondiente.")  
     
     # visualization
 
@@ -372,7 +384,7 @@ if st.button("Comenzar"):
     gr["Gas"]= gs
     gr["Valor"]= va
     st.write("# Simulación de tiempo real")
-    st.write("""Las fechas de las anomalias son:""")
+    st.write("""Indice de fechas de las anomalias detectadas:""")
     st.write(q["Date"].loc[(q['Anomalias']> 0)])
     if st.button("Simulación tiempo real"):
         fig = px.bar(gr, x= "Gas", y= "Valor",color="Gas", 
