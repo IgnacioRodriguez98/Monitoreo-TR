@@ -19,24 +19,43 @@ with st.sidebar:
      ('English', 'Español'))
 ##########################################################
 
-st.write(""" # Introducción
+if option == 'Español':    
+    st.write(""" # Introducción
 
-Esta es una aplicación enfocada a la detección de anomalías en los gases que se generan dentro de un transformador; 
-podemos realizar un análisis individual por cada gas, así como un análisis multivariado con 2 o más gases a la vez.
+    Esta es una aplicación enfocada a la detección de anomalías en los gases que se generan dentro de un transformador; 
+    podemos realizar un análisis individual por cada gas, así como un análisis multivariado con 2 o más gases a la vez.
 
-Los gases a analizar son los conocidos como "Gases Combustibles":
-Acetileno, Hidrógeno, Etileno, Monóxido de Carbono, Etano y Metano.
-""")
+    Los gases a analizar son los conocidos como "Gases Combustibles":
+    Acetileno, Hidrógeno, Etileno, Monóxido de Carbono, Etano y Metano.
+    """)
 
-st.write(""" # ¿Qué es la detección de anomalías?
-Como su nombre lo indica es localizar un comportamiento, patrón, información 
-que este fuera de los límites “normales” 
+    st.write(""" # ¿Qué es la detección de anomalías?
+    Como su nombre lo indica es localizar un comportamiento, patrón, información 
+    que este fuera de los límites “normales” 
 
-## Detección de anomalias en tiempo real
-La detección de anomalias en tiempo real en una planta ayudaría a evitar consecuencias graves, como lo podrían ser
-paros imprevistos de los equipo hasta explosiones del equipo en cuestión. A su vez ayuda en la toma de decisiones más acertadas sobre qué hacer para no llegar a alguna consecuencia irreparable.
+    ## Detección de anomalias en tiempo real
+    La detección de anomalias en tiempo real en una planta ayudaría a evitar consecuencias graves, como lo podrían ser
+    paros imprevistos de los equipo hasta explosiones del equipo en cuestión. A su vez ayuda en la toma de decisiones más acertadas sobre qué hacer para no llegar a alguna consecuencia irreparable.
 
-Esta aplicación simula ser un detector de anomalias en tiempo real instalado en una planta, antes de comenzar por favor seguir los siguientes pasos.""")
+    Esta aplicación simula ser un detector de anomalias en tiempo real instalado en una planta, antes de comenzar por favor seguir los siguientes pasos.""")
+else:
+    st.write("""# Introduction
+    This is an application focused on the detection of anomalies in the gases that are generated inside a transformer; 
+    we can perform an individual analysis for each gas, as well as a multivariate analysis with 2 or more gases at the same time.
+    
+    The gases to be analyzed are those known as "Combustible Gases": 
+    Acetylene, Hydrogen, Ethylene, Carbon Monoxide, Ethane and Methane.""")
+
+    st.write("""# What is anomaly detection?
+    As its name indicates, it is to locate a behavior, pattern, information
+    that is outside the “normal” limits.
+
+    ## Real-time anomaly detection
+    The detection of anomalies in real time in a plant would help to avoid serious consequences,
+    such as unforeseen stoppages of the equipment to explosions of the equipment in question. In turn, it helps in making more accurate decisions about what to do so as not to reach some irreparable consequence.
+    
+    This application simulates to be a real time anomaly detector installed in a plant, before starting please follow the next steps.
+    """)
 
 ##########################################################
 
