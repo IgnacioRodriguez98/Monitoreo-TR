@@ -39,19 +39,20 @@ if option == 'Español':
 
     Esta aplicación simula ser un detector de anomalias en tiempo real instalado en una planta, antes de comenzar por favor seguir los siguientes pasos.""")
 else:
-    st.write("""# Introduction
-    This is an application focused on the detection of anomalies in the gases that are generated inside a transformer; 
+    st.write("""# Introduction""")
+    
+    st.write("""This is an application focused on the detection of anomalies in the gases that are generated inside a transformer; 
     we can perform an individual analysis for each gas, as well as a multivariate analysis with 2 or more gases at the same time.
     
     The gases to be analyzed are those known as "Combustible Gases": 
     Acetylene, Hydrogen, Ethylene, Carbon Monoxide, Ethane and Methane.""")
 
-    st.write("""# What is anomaly detection?
-    As its name indicates, it is to locate a behavior, pattern, information
-    that is outside the “normal” limits.
+    st.write("""# What is anomaly detection?""")
+    st.write("""As its name indicates, it is to locate a behavior, pattern, information
+    that is outside the “normal” limits.""")
 
-    ## Real-time anomaly detection
-    The detection of anomalies in real time in a plant would help to avoid serious consequences,
+    st.writ("""## Real-time anomaly detection""")
+    st.write("""The detection of anomalies in real time in a plant would help to avoid serious consequences,
     such as unforeseen stoppages of the equipment to explosions of the equipment in question. In turn, it helps in making more accurate decisions about what to do so as not to reach some irreparable consequence.
     
     This application simulates to be a real time anomaly detector installed in a plant, before starting please follow the next steps.
