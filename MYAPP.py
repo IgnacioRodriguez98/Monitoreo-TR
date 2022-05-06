@@ -87,7 +87,7 @@ En el mismo menú del paso anterior se encuentra el apartado "Gases", en donde e
 **Ojo: A mayor número de gases mayor será el tiempo de ejecución.**
 
 Una vez seleccionado la base de datos y los gases a analizar, podemos empezar haciendo clic en el 
-## siguiente boton. """)
+#### siguiente boton. """)
 
 lista = []
 header = ["Date"]
