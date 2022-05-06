@@ -460,28 +460,28 @@ if option == "Español":
     st.write(""" ### Visualizador de variables seleccionadas""")
 
     if st.checkbox('Visualizar base de datos seleccionada'):
-    headz = ["Date","Acetileno","Hidrogeno","Etileno","Monoxido de carbono","Etano","Metano"]
-    r = df.copy()
-    r.columns = headz
-    st.write(r)
+        headz = ["Date","Acetileno","Hidrogeno","Etileno","Monoxido de carbono","Etano","Metano"]
+        r = df.copy()
+        r.columns = headz
+        st.write(r)
 
     if len(lista)> 0:
-    if st.checkbox('Visualizar variables seleccionadas'):
-        st.write(q.drop(columns=['Date']))
+        if st.checkbox('Visualizar variables seleccionadas'):
+            st.write(q.drop(columns=['Date']))
 
 else:
     
     st.write(""" ### Selected Variables Viewer""")
 
     if st.checkbox('Display selected database'):
-    headz = ["Date","Acetileno","Hidrogeno","Etileno","Monoxido de carbono","Etano","Metano"]
-    r = df.copy()
-    r.columns = headz
-    st.write(r)
+        headz = ["Date","Acetylene","Hydrogen","Ethylene","Carbon Monoxide","Ethane","Methane"]
+        r = df.copy()
+        r.columns = headz
+        st.write(r)
 
     if len(lista)> 0:
-    if st.checkbox('Display selected variables'):
-        st.write(q.drop(columns=['Date']))
+        if st.checkbox('Display selected variables'):
+            st.write(q.drop(columns=['Date']))
 
 
 
