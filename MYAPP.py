@@ -361,6 +361,6 @@ if st.checkbox('Visualizar base de datos seleccionada'):
 
 if len(lista)> 0:
     if st.checkbox('Visualizar variables seleccionadas'):
-        st.write(q[1:])
+        st.write(q[:,1:])
 
 
