@@ -54,8 +54,8 @@ else:
     st.write("""## Real-time anomaly detection""")
     st.write("""The detection of anomalies in real time in a plant would help to avoid serious consequences,
     such as unforeseen stoppages of the equipment to explosions of the equipment in question. In turn, it helps in making more accurate decisions about what to do so as not to reach some irreparable consequence.
-    
-    This application simulates to be a real time anomaly detector installed in a plant, before starting please follow the next steps.
+    """)
+    st.write("""This application simulates to be a real time anomaly detector installed in a plant, before starting please follow the next steps.
     """)
 
 ##########################################################
