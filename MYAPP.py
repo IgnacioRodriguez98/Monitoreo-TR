@@ -351,7 +351,8 @@ if st.button("Comenzar"):
         fig.update_yaxes(range=[0,(gr["Valor"].max().max())//3])
         st.write(fig)
 
-st.write(""" # Visualizador de variables seleccionadas """)
+st.write(""" # Visualizador de variables seleccionadas 
+Aquí podras ver las variables seleccionadas""")
 
 if st.checkbox('Visualizar base de datos seleccionada'):
     headz = ["Date","Acetileno","Hidrogeno","Etileno","Monoxido de carbono","Etano","Metano"]
