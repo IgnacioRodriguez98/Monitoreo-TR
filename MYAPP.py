@@ -16,7 +16,6 @@ with st.sidebar:
      ('English', 'Español'))
 ##########################################################
 st.image('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/Geekr%20Miners%20ENG.png',width = 600 )
-st.image('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/Deteccion%20de%20anomalias.jpeg',width = 600)
 if option == 'Español':    
     st.write(""" # Introducción
 
@@ -28,6 +27,9 @@ if option == 'Español':
     """)
 
     st.write(""" # ¿Qué es la detección de anomalías?
+    
+    st.image('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/Deteccion%20de%20anomalias.jpeg',width = 600)
+
     Como su nombre lo indica es localizar un comportamiento, patrón, información 
     que este fuera de los límites “normales” 
 
@@ -46,6 +48,9 @@ else:
     Acetylene, Hydrogen, Ethylene, Carbon Monoxide, Ethane and Methane.""")
 
     st.write("""# What is anomaly detection?""")
+    
+    st.image('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/Deteccion%20de%20anomalias.jpeg',width = 600)
+
     st.write("""As its name indicates, it is to locate a behavior, pattern, information
     that is outside the “normal” limits.""")
 
