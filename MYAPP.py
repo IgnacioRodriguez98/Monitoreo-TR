@@ -49,13 +49,13 @@ with st.sidebar:
     C2H6 = st.checkbox("Etano")
     CH4 = st.checkbox("Metano")
 
-if database == '1 (2432 datos)':
+if database == 'Planta 1 (2,432 datos)':
     #st.write("""# Has seleccionado la base de datos 1""")
     #df = pd.read_csv('https://docs.google.com/spreadsheets/d/1iuC6jPlFf5sbzM-E6u-L2FMQR8AjEpCQ0ZJyCpwTSJ4/edit?usp=sharing', header=None)
     df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/planta2.csv', header=None)
     #st.write(df)
 
-elif database == '2 (9277 datos)':
+elif database == 'Planta 2 (9,277 datos)':
     #st.write("""# Has seleccionado la base de datos 2""")
     #df= pd.read_csv('https://docs.google.com/spreadsheets/d/1-hiYI8sBIcoMXOvw0pCFOnnhrD-9f7ZW3A_EHuONlso/edit?usp=sharing', header=None)
     df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/planta3.csv', header=None)
@@ -68,12 +68,13 @@ else:
     df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/planta1.csv', header=None)
     #st.write(df)
 ##################### SELECCION DE GASES ######################
+st.write("""# 1er Paso: Selección de variables
+
+En la parte superior izquierda se encuentra un menú desplegable en la cuál deberá seleccionar: 
+la base de datos a utilizar y los gases a analizar
+""")
 if st.button("Comenzar"):
-    st.write("""# 1er Paso: Selección de variables
-    
-    En la parte superior izquierda se encuentra un menú desplegable en la cuál deberá seleccionar: 
-    la base de datos a utilizar y los gases a analizar
-    """)
+
 
 
     lista = []
