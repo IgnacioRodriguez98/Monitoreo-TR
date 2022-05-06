@@ -355,7 +355,7 @@ st.write(""" # Visualizador de variables seleccionadas """)
 
 if st.checkbox('Visualizar base de datos seleccionada'):
     headz = ["Date","Acetileno","Hidrogeno","Etileno","Monoxido de carbono","Etano","Metano"]
-    r = db.copy()
+    r = df.copy()
     r.columns = headz
     st.write(r)
 
