@@ -27,6 +27,13 @@ podemos realizar un análisis individual por cada gas, así como un análisis mu
 Los gases a analizar son los conocidos como "Gases Combustibles":
 Acetileno, Hidrógeno, Etileno, Monóxido de Carbono, Etano y Metano.
 """)
+st.write(""" # Detección de anomalias en tiempo real
+La detección de anomalias en tiempo real en una planta ayudaría a evitar consecuencias graves, como lo podrían ser
+paros imprevistos de los equipo hasta explosiones del equipo en cuestión.
+
+A su vez ayuda en la toma de decisiones más acertadas sobre qué hacer para no llegar a alguna consecuencia irreparable.
+
+Esta aplicación simula ser un detector de anomalias en tiempo real instalado en una planta, para comenzar con esta haga clic en el siguiente boton.""")
 
 ##########################################################
 
