@@ -407,7 +407,7 @@ if st.button(bt):
             else:
                 st.write("### Gas behavior with detected anomalies")
                 st.write(fig4)
-                st.write("The red dots are the anomalous behaviors in the corresponding gas."))
+                st.write("The red dots are the anomalous behaviors in the corresponding gas.")
 
         elif CO.columns[0]==3:
             fig4, ax = plt.subplots(figsize=(10,6))
