@@ -166,7 +166,7 @@ if st.button("Comenzar"):
     ############## Grafica
     fig = px.line(db)
     st.write(fig)
-    st.write("""Valores de los gases seleccionados a través del tiempo.""")
+    st.write(""" ### Valores de los gases seleccionados a través del tiempo.""")
 
     #### AUTOENCODER
     gases = []
