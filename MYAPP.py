@@ -9,10 +9,7 @@ from pyod.models.auto_encoder import AutoEncoder
 from sklearn.preprocessing import StandardScaler
 
 
-###################################Variables de lenguaje###########################################
-
-
-
+################################### Lenguaje ###########################################
 with st.sidebar:
     option = st.selectbox(
      "Lenguage / Idioma" ,
@@ -109,22 +106,37 @@ else:
             df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/planta1.csv', header=None)
 
 
-##################### SELECCION DE GASES ######################
-st.write("""# 1er Paso: Selección de base de datos
+#####################  ######################
+if option == "Español":
+    st.write("""# 1er Paso: Selección de base de datos
 
-En la parte superior izquierda se encuentra una flecha, la cuál despliega un menú en la cuál deberá seleccionar
-entre 3 bases de datos disponibles; Estas corresponden a una planta distinta y están ordenadas conforme a su número de datos.
+    En la parte superior izquierda se encuentra una flecha, la cuál despliega un menú en la cuál deberá seleccionar
+    entre 3 bases de datos disponibles; Estas corresponden a una planta distinta y están ordenadas conforme a su número de datos.
 
-**Ojo: Tener en cuenta que mientras más grande sea la base de datos mayor será el tiempo de ejecución.** """)
+    **Ojo: Tener en cuenta que mientras más grande sea la base de datos mayor será el tiempo de ejecución.** """)
 
-st.write("""# 2nd Paso: Selección de gases
+    st.write("""# 2nd Paso: Selección de gases
 
-En el mismo menú del paso anterior se encuentra el apartado "Gases", en donde encontrará checkbox para seleccionar los gases que monitorearemos..
+    En el mismo menú del paso anterior se encuentra el apartado "Gases", en donde encontrará checkbox para seleccionar los gases que monitorearemos..
 
-**Ojo: A mayor número de gases mayor será el tiempo de ejecución.**
+    **Ojo: A mayor número de gases mayor será el tiempo de ejecución.**
 
-Una vez seleccionado la base de datos y los gases a analizar, podemos empezar haciendo clic en el 
-###### siguiente boton. """)
+    Una vez seleccionado la base de datos y los gases a analizar, podemos empezar haciendo clic en el 
+    ###### siguiente boton. """)
+
+else:
+    st.write("""# Second Step: Gas Selection""")
+
+    st.write("""In the upper left partof the screen is an arrow, which displays a menu in which you must select
+    between 3 available databases; These correspond to a different plant and are ordered according to their data number.
+
+    **Warning: Keep in mind that the larger the database, the longer the execution time will be.""")
+
+    st.write("""# 2nd Paso: Selección de gases""")
+    st.write("""In the same menu as in the previous step, there is the "Gases" section, where you will find a checkbox to select the gases that we will monitor.
+     **Warning: The higher the number of gases, the longer the execution time will be.**""")
+     st.write("""Once the database and the gases to be analyzed have been selected, we can start by clicking on the""")
+     st.write(""" ###### next button. """)
 
 lista = []
 header = ["Date"]
