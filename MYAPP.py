@@ -73,7 +73,7 @@ st.write("""# 1er Paso: Selección de base de datos
 En la parte superior izquierda se encuentra una flecha, la cuál despliega un menú en la cuál deberá seleccionar
 entre 3 bases de datos disponibles; Estas corresponden a una planta distinta y están ordenadas conforme a su número de datos.
 
-Ojo: Tener en cuenta que mientras más grande sea la base de datos mayor será el tiempo de ejecución.""")
+** Ojo: Tener en cuenta que mientras más grande sea la base de datos mayor será el tiempo de ejecución. ** """)
 if st.button("Comenzar"):
 
 
