@@ -133,15 +133,6 @@ if len(lista)> 0:
 
 if st.button("Comenzar"):
 
-    if C2H2== False |H2 == False | C2H4 == False |CO == False |C2H6 ==False |CH4 == False:
-        p=" "
-
-    q = p.copy()
-    q.columns = header
-    q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
-
-    ########################################################################################################
-
     ######### Reproduccion tiempo real
     db = []
     p.drop([0],inplace=True, axis=1)
@@ -209,6 +200,11 @@ if st.button("Comenzar"):
         plt.hist(y_test_scores, bins='auto')  
         plt.title("Histogram for Model Clf Anomaly Scores")
         plt.show();
+
+        st.write("""Aquí se muestra los datos originales a través del tiempo mostrando los gases seleccionados; 
+        para el modelo multivariado se toma dos terceras partes para entrenamiento del modelo y la última tercera parte para prueba. 
+        Y en el modelo de una sola variable sobre sí mismo se detectan anomalías.""")
+
         df_test = X_test.copy()
         df_test['score'] = y_test_scores
         df_test['cluster'] = np.where(df_test['score']<4, 0, 1)
