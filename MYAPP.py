@@ -362,7 +362,7 @@ if len(lista)> 0:
             CO = db.iloc[:, [0]]
 
         #Parámetros
-            outliers_fraction = float(.1)
+            outliers_fraction = float(.01)
             scaler = StandardScaler()
             np_scaled = scaler.fit_transform(CO.values.reshape(-1, 1))
             data = pd.DataFrame(CO.iloc[:, [0]])
