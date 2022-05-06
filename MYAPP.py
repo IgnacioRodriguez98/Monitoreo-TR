@@ -201,10 +201,6 @@ if st.button("Comenzar"):
         plt.title("Histogram for Model Clf Anomaly Scores")
         plt.show();
 
-        st.write("""Aquí se muestra los datos originales a través del tiempo mostrando los gases seleccionados; 
-        para el modelo multivariado se toma dos terceras partes para entrenamiento del modelo y la última tercera parte para prueba. 
-        Y en el modelo de una sola variable sobre sí mismo se detectan anomalías.""")
-
         df_test = X_test.copy()
         df_test['score'] = y_test_scores
         df_test['cluster'] = np.where(df_test['score']<4, 0, 1)
@@ -224,8 +220,21 @@ if st.button("Comenzar"):
         plt.xlabel('Date Time')
         plt.ylabel('Gases')
         plt.show();
+
+        st.write("""Aquí se muestra los datos originales a través del tiempo mostrando los gases seleccionados; 
+        en el caso del Autoencoder, se toma dos terceras partes para entrenamiento del modelo y la parte restante para prueba. 
+        Y en el modelo de una sola variable sobre sí mismo se detectan anomalías.""")
+        
         st.write(fig3)
+
+        st.write(""" Esta grafica muestra el comportamiento general de los datos, 
+        estos se agrupan según sus valores, permitiendo definir valores “normales” y valores “anómalos”.""")
+
         st.write(fig2)
+        
+        st.write(""" Esta gráfrica representa una tercera parte de todos los valores; 
+        las lineas verticales (rojas) son las anomalias detectadas por el Autoencoder 
+        estas representan el momento en la que el conjunto de gases salen de su vomportamiento “normal”.""")
     
         
 
