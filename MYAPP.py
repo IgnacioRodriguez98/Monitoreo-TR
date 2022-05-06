@@ -244,16 +244,16 @@ if st.button("Comenzar"):
         plt.ylabel('Gases')
         plt.show();
      
+        st.write("""### Comportamiento de los gases agrupados según sus valores""")
         st.write(fig3)
 
-        st.write(""" Comportamiento de los gases agrupados según sus valores, 
-        permitiendo definir valores “normales” y valores “anómalos”.""")
+        st.write("""Permite definir valores “normales” y valores “anómalos”.""")
 
+        st.write("""### Resultado del modelo""")        
         st.write(fig2)
         
-        st.write(""" Muestreo de la base de datos. Las lineas verticales (rojas)
-         son las anomalias detectadas por el Autoencoder, estas representan el momento en 
-         la que el conjunto de gases salen de su comportamiento “normal”.""")
+        st.write("""Las lineas verticales (rojas) son las anomalias detectadas por el Autoencoder, 
+        estas representan el momento en la que el conjunto de gases salen de su comportamiento “normal”.""")
     
         
 
