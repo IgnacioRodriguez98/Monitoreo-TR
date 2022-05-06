@@ -51,7 +51,7 @@ else:
     st.write("""As its name indicates, it is to locate a behavior, pattern, information
     that is outside the “normal” limits.""")
 
-    st.writ("""## Real-time anomaly detection""")
+    st.write("""## Real-time anomaly detection""")
     st.write("""The detection of anomalies in real time in a plant would help to avoid serious consequences,
     such as unforeseen stoppages of the equipment to explosions of the equipment in question. In turn, it helps in making more accurate decisions about what to do so as not to reach some irreparable consequence.
     
