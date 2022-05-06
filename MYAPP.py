@@ -275,73 +275,74 @@ if st.button("Comenzar"):
         if CO.columns[0]==1:
             fig4, ax = plt.subplots(figsize=(10,6))
             a = CO.loc[CO['anomaly'] == -1, [1]] #anomaly
-            st.write(a)
+            #st.write(a)
             ax.plot(CO.index, CO.iloc[:, [0]], color='black', label = 'Normal')
             ax.scatter(a.index,a.iloc[:, [0]], color='red', label = 'Anomaly')
             plt.title("Acetileno")
             plt.legend()
             plt.show();
-            st.write(fig4,ax)
+            #st.write(fig4,ax)
 
         elif CO.columns[0]==2:
             fig4, ax = plt.subplots(figsize=(10,6))
 
             a = CO.loc[CO['anomaly'] == -1, [2]] #anomaly
-            st.write(a)
+            #st.write(a)
             ax.plot(CO.index, CO.iloc[:, [0]], color='black', label = 'Normal')
             ax.scatter(a.index,a.iloc[:, [0]], color='red', label = 'Anomaly')
             plt.title("Hidrogeno")
             plt.legend()
             plt.show();
-            st.write(fig4,ax)
+            #st.write(fig4,ax)
 
         elif CO.columns[0]==3:
             fig4, ax = plt.subplots(figsize=(10,6))
 
             a = CO.loc[CO['anomaly'] == -1, [3]] #anomaly
-            st.write(a)
+            #st.write(a)
             ax.plot(CO.index, CO.iloc[:, [0]], color='black', label = 'Normal')
             ax.scatter(a.index,a.iloc[:, [0]], color='red', label = 'Anomaly')
             plt.title("Etileno")
             plt.legend()
             plt.show();
-            st.write(fig4,ax)
+            #st.write(fig4,ax)
 
         elif CO.columns[0]==4:
             fig4, ax = plt.subplots(figsize=(10,6))
 
             a = CO.loc[CO['anomaly'] == -1, [4]] #anomaly
-            st.write(a)
+            #st.write(a)
             ax.plot(CO.index, CO.iloc[:, [0]], color='black', label = 'Normal')
             ax.scatter(a.index,a.iloc[:, [0]], color='red', label = 'Anomaly')
             plt.title("Monoxido de Carbono")
             plt.legend()
             plt.show();
-            st.write(fig4,ax)
+            #st.write(fig4,ax)
             
         elif CO.columns[0]==5:
             fig4, ax = plt.subplots(figsize=(10,6))
 
             a = CO.loc[CO['anomaly'] == -1, [5]] #anomaly
-            st.write(a)
+            #st.write(a)
             ax.plot(CO.index, CO.iloc[:, [0]], color='black', label = 'Normal')
             ax.scatter(a.index,a.iloc[:, [0]], color='red', label = 'Anomaly')
             plt.title("Etano")
             plt.legend()
             plt.show();
-            st.write(fig4,ax)
+            #st.write(fig4,ax)
 
         elif CO.columns[0]==6:
             fig4, ax = plt.subplots(figsize=(10,6))
 
             a = CO.loc[CO['anomaly'] == -1, [6]] #anomaly
-            st.write(a)
+            #st.write(a)
             ax.plot(CO.index, CO.iloc[:, [0]], color='black', label = 'Normal')
             ax.scatter(a.index,a.iloc[:, [0]], color='red', label = 'Anomaly')
             plt.title("Metano")
             plt.legend()
             plt.show();
-            st.write(fig4,ax)   
+            #st.write(fig4,ax)   
+    
     # visualization
 
     header.append("Anomalias")
@@ -371,6 +372,8 @@ if st.button("Comenzar"):
     gr["Gas"]= gs
     gr["Valor"]= va
     st.write("# Simulación de tiempo real")
+    st.write("""Las fechas de las anomalias son:""")
+    st.write(q["Date"].loc[(q['Anomalias']> 0)])
     if st.button("Simulación tiempo real"):
         fig = px.bar(gr, x= "Gas", y= "Valor",color="Gas", 
         color_discrete_map=colores, animation_frame= "Date", 
@@ -378,7 +381,7 @@ if st.button("Comenzar"):
         fig.update_layout(width=800)
         fig.update_yaxes(range=[0,(gr["Valor"].max().max())//3])
         st.write(fig)
-        st.write("""Se muestran los valores de los gases seleccionados a través del tiempo.
+        st.write("""Simulación de la recabación de los datos a traves de un periodo de tiempo.
         El valor asignado a la anomalia es simbolico y solo sirve como representación de su existencia.""")
 
 st.write(""" ### Visualizador de variables seleccionadas""")
