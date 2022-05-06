@@ -199,7 +199,6 @@ if st.button("Comenzar"):
         fig3 = plt.figure(figsize=(10,4))   
         plt.hist(y_test_scores, bins='auto')  
         plt.title("Histogram for Model Clf Anomaly Scores")
-        plt.update_xaxes(range=[0,10])
         plt.show();
         
         st.write("""Aquí se muestra los datos originales a través del tiempo mostrando los gases seleccionados; 
@@ -225,9 +224,7 @@ if st.button("Comenzar"):
         plt.xlabel('Date Time')
         plt.ylabel('Gases')
         plt.show();
-
-        
-        
+     
         st.write(fig3)
 
         st.write(""" Esta grafica muestra el comportamiento general de los datos, 
@@ -269,7 +266,7 @@ if st.button("Comenzar"):
 
         elif CO.columns[0]==2:
             fig4, ax = plt.subplots(figsize=(10,6))
-
+            
             a = CO.loc[CO['anomaly'] == -1, [2]] #anomaly
             st.write(a)
             ax.plot(CO.index, CO.iloc[:, [0]], color='black', label = 'Normal')
