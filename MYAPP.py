@@ -135,8 +135,8 @@ else:
     st.write("""# 2nd Paso: Selección de gases""")
     st.write("""In the same menu as in the previous step, there is the "Gases" section, where you will find a checkbox to select the gases that we will monitor.
      **Warning: The higher the number of gases, the longer the execution time will be.**""")
-     st.write("""Once the database and the gases to be analyzed have been selected, we can start by clicking on the""")
-     st.write(""" ###### next button. """)
+    t.write("""Once the database and the gases to be analyzed have been selected, we can start by clicking on the""")
+    st.write(""" ###### next button. """)
 
 lista = []
 header = ["Date"]
