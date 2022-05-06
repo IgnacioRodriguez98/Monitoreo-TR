@@ -126,7 +126,7 @@ if option == "Español":
     bt = "Comenzar"
 
 else:
-    st.write("""First step: Database Selection""")
+    st.write("""# First step: Database Selection""")
 
     st.write("""In the upper left partof the screen is an arrow, which displays a menu in which you must select
     between 3 available databases; These correspond to a different plant and are ordered according to their data number.
