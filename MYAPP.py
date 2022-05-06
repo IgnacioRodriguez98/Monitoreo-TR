@@ -132,7 +132,22 @@ if len(lista)> 0:
     q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
 
 if st.button("Comenzar"):
+    st.write("""# Modelos de Machine Learning
+    Para la logra la detección de anomalias en esta app se hace uso de dos modelos de Machine Learning,
+    **Autoencoder** para cuando se desea detectar anomalias en 2 o más gases y 
+    **Isolation Forest**, cuando solamente se analiza un gas.
+    
+    ### Autoencoder
+    
+    Los autoencoders son redes neuronales artificiales, entrenadas de manera no supervisada, 
+    que tienen como objetivo aprender primero las representaciones codificadas de nuestros datos 
+    y luego generar los datos de entrada a partir de las representaciones codificadas aprendidas.
 
+    ### Isolation Forest
+
+    En un bosque de aislamiento, los datos se submuestrean aleatoriamente, estos se procesan 
+    en una estructura de árbol basada en características seleccionadas aleatoriamente.
+    """)
     ######### Reproduccion tiempo real
     db = []
     p.drop([0],inplace=True, axis=1)
@@ -146,6 +161,7 @@ if st.button("Comenzar"):
     ############## Grafica
     fig = px.line(db)
     st.write(fig)
+    st.write("""Esta gráfica muestra los valores de los gases seleccionados a través del tiempo.""")
 
     #### AUTOENCODER
     gases = []
@@ -201,9 +217,6 @@ if st.button("Comenzar"):
         plt.title("Histogram for Model Clf Anomaly Scores")
         plt.show();
         
-        st.write("""Aquí se muestra los datos originales a través del tiempo mostrando los gases seleccionados; 
-        en el caso del Autoencoder, se toma dos terceras partes para entrenamiento del modelo y la parte restante para prueba. 
-        Y en el modelo de una sola variable sobre sí mismo se detectan anomalías.""")
         
         df_test = X_test.copy()
         df_test['score'] = y_test_scores
@@ -266,7 +279,7 @@ if st.button("Comenzar"):
 
         elif CO.columns[0]==2:
             fig4, ax = plt.subplots(figsize=(10,6))
-            
+
             a = CO.loc[CO['anomaly'] == -1, [2]] #anomaly
             st.write(a)
             ax.plot(CO.index, CO.iloc[:, [0]], color='black', label = 'Normal')
