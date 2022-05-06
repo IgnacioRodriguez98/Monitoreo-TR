@@ -212,7 +212,7 @@ if st.button("Comenzar"):
 
         t = df_test.groupby('cluster').mean()
         indices = pd.DataFrame(np.where(y_test_scores > (t["score"].min()+(t["score"].max()/2.8))))
-        st.write(indices)
+        #st.write(indices)
         for i, j  in indices.iteritems():
             q["Anomalias"][j]=-1
         X_test = db[round((len(db)/3)*2):]
