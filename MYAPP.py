@@ -31,10 +31,10 @@ if option == 'Español':
     st.image('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/Deteccion%20de%20anomalias.jpeg',width = 600)
 
     st.write("""Como su nombre lo indica es localizar un comportamiento, patrón, información 
-    que este fuera de los límites “normales” 
+    que este fuera de los límites “normales” """)
 
-    ## Detección de anomalias en tiempo real
-    La detección de anomalias en tiempo real en una planta ayudaría a evitar consecuencias graves, como lo podrían ser
+    st.write("""## Detección de anomalias en tiempo real""")
+    st.write("""La detección de anomalias en tiempo real en una planta ayudaría a evitar consecuencias graves, como lo podrían ser
     paros imprevistos de los equipo hasta explosiones del equipo en cuestión. A su vez ayuda en la toma de decisiones más acertadas sobre qué hacer para no llegar a alguna consecuencia irreparable.
 
     Esta aplicación simula ser un detector de anomalias en tiempo real instalado en una planta, antes de comenzar por favor seguir los siguientes pasos.""")
