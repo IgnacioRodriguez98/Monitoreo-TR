@@ -132,18 +132,18 @@ if len(lista)> 0:
     q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
 
 if st.button("Comenzar"):
-    st.markdown("""# Modelos de Machine Learning
+    st.write("""# Modelos de Machine Learning
     Para la logra la detección de anomalias en esta app se hace uso de dos modelos de Machine Learning,
-    **Autoencoder** para cuando se desea detectar anomalias en 2 o más gases y 
-    **Isolation Forest**, cuando solamente se analiza un gas.
+     **Autoencoder** para cuando se desea detectar anomalias en 2 o más gases y 
+     **Isolation Forest**, cuando solamente se analiza un gas.""")
     
-    ### Autoencoder
+    st.write("""### Autoencoder
     
     Los autoencoders son redes neuronales artificiales, entrenadas de manera no supervisada, 
     que tienen como objetivo aprender primero las representaciones codificadas de nuestros datos 
-    y luego generar los datos de entrada a partir de las representaciones codificadas aprendidas.
+    y luego generar los datos de entrada a partir de las representaciones codificadas aprendidas.""")
 
-    ### Isolation Forest
+    st.write("""### Isolation Forest
 
     En un bosque de aislamiento, los datos se submuestrean aleatoriamente, estos se procesan 
     en una estructura de árbol basada en características seleccionadas aleatoriamente.
