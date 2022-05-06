@@ -147,10 +147,10 @@ if st.button("Comenzar"):
     
     else:
 
-        st.write(""" ## Isolation Forest
+        st.write("## Isolation Forest")
 
-        En un bosque de aislamiento, los datos se submuestrean aleatoriamente, estos se 
-        procesan en una estructura de árbol basada en características 
+        st.write("""En un bosque de aislamiento, los datos se submuestrean aleatoriamente, 
+        estos se procesan en una estructura de árbol basada en características 
         seleccionadas aleatoriamente.
         """)
     ######### Reproduccion tiempo real
