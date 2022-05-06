@@ -359,7 +359,10 @@ if st.checkbox('Visualizar base de datos seleccionada'):
     r.columns = headz
     st.write(r)
 
-if st.checkbox('Visualizar variables seleccionadas'):
-    st.write(q)
+if C2H2== False |H2 == False | C2H4 == False |CO == False |C2H6 ==False |CH4 == False:
+
+else: 
+    if st.checkbox('Visualizar variables seleccionadas'):
+        st.write(q)
 
 
