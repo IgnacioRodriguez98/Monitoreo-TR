@@ -68,7 +68,6 @@ else:
     df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/planta1.csv', header=None)
     #st.write(df)
 ##################### SELECCION DE GASES ######################
-st.write(df)
 if st.button("Comenzar"):
     st.write("""# 1er Paso: Selección de variables
     
