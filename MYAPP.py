@@ -140,9 +140,11 @@ if st.button("Comenzar"):
     
     if len(header) >= 2:
 
-        st.write("""## Autoencoder
+        st.write("""## Autoencoder\n
     
-        Los autoencoders son redes neuronales artificiales, entrenadas de manera no supervisada,que tienen como objetivo\n aprender primero las representaciones codificadas de nuestros datos y luego generar los datos de entrada a partir de las representaciones codificadas aprendidas.""")
+        Los autoencoders son redes neuronales artificiales, entrenadas de manera no supervisada,que tienen como objetivo
+        aprender primero las representaciones codificadas de nuestros datos y luego generar los datos de entrada
+        a partir de las representaciones codificadas aprendidas.""")
     
     else:
 
