@@ -15,6 +15,7 @@ with st.sidebar:
      "Lenguage / Idioma" ,
      ('English', 'Español'))
 ##########################################################
+st.image('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/Geekr%20Miners%20ENG.png')
 
 if option == 'Español':    
     st.write(""" # Introducción
@@ -80,7 +81,6 @@ if option == "Español":
 
         else:
             df = pd.read_csv('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/planta1.csv', header=None)
-
 else:
     with st.sidebar:
         st.write("# Variables")
@@ -124,7 +124,6 @@ if option == "Español":
     st.write("""Una vez seleccionado la base de datos y los gases a analizar, podemos empezar haciendo clic en el""")
     st.write("""###### siguiente boton. """)
     bt = "Comenzar"
-
 else:
     st.write("""# First step: Database Selection""")
 
@@ -181,7 +180,7 @@ if len(lista)> 0:
     q = p.copy()
     q.columns = header
     q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
-
+############################# Boton de Inicio #############################
 if st.button(bt):
     st.write("""# Modelos de Machine Learning
     
@@ -455,6 +454,7 @@ if st.button(bt):
     puede es aplicable para la medición de gases en cualquier circunstancia siempre y cuando se tenga equipo 
     con cual tomar y guardar mediciones en una base de datos para poderlos procesar.""")
 
+############################# Visualizador de datos #############################
 if option == "Español":
 
     st.write(""" ### Visualizador de variables seleccionadas""")
@@ -468,7 +468,6 @@ if option == "Español":
     if len(lista)> 0:
         if st.checkbox('Visualizar variables seleccionadas'):
             st.write(q.drop(columns=['Date']))
-
 else:
     
     st.write(""" ### Selected Variables Viewer""")
