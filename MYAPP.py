@@ -75,7 +75,7 @@ entre 3 bases de datos disponibles; Estas corresponden a una planta distinta y e
 
 **Ojo: Tener en cuenta que mientras más grande sea la base de datos mayor será el tiempo de ejecución.** """)
 
-st.write("""# 2nd Paso: Selección de variables/gases a analizar
+st.write("""# 2nd Paso: Selección de gases
 
 En el mismo menú del paso anterior se encuentra el apartado "Gases", en donde encontrará checkbox para seleccionar los gases que monitorearemos..
 
