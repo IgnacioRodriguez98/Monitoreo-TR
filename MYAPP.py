@@ -199,7 +199,7 @@ if st.button("Comenzar"):
         fig3 = plt.figure(figsize=(10,4))   
         plt.hist(y_test_scores, bins='auto')  
         plt.title("Histogram for Model Clf Anomaly Scores")
-        plt.update_xaxes(range=[0,10)
+        plt.update_xaxes(range=[0,10])
         plt.show();
         
         st.write("""Aquí se muestra los datos originales a través del tiempo mostrando los gases seleccionados; 
