@@ -191,9 +191,9 @@ if len(lista)> 0:
 ############################# Boton de Inicio #############################
     if st.button(bt):
         if option == "Español":
-            st.write("""# Modelos de Machine Learning
+            st.write("""# Modelos de Machine Learning""")
             
-            Para lograr la detección de anomalias en esta app se hace uso de dos modelos de Machine Learning,
+            st.write("""Para lograr la detección de anomalias en esta app se hace uso de dos modelos de Machine Learning,
             Autoencoder para cuando se desea detectar anomalias en 2 o más gases y 
             Isolation Forest, cuando solamente se analiza un gas.""")
             
