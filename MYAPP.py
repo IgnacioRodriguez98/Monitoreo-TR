@@ -79,7 +79,10 @@ st.write("""# 2nd Paso: Selección de gases
 
 En el mismo menú del paso anterior se encuentra el apartado "Gases", en donde encontrará checkbox para seleccionar los gases que monitorearemos..
 
-**Ojo: A mayor número de gases mayor será el tiempo de ejecución.** """)
+**Ojo: A mayor número de gases mayor será el tiempo de ejecución.**
+
+Una vez seleccionado la base de datos y los gases a analizar, podemos empezar haciendo clic en el siguiente boton. """)
+
 if st.button("Comenzar"):
 
 
