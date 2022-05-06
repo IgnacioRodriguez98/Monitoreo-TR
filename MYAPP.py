@@ -386,22 +386,22 @@ if st.button("Comenzar"):
     st.write("# Simulación de tiempo real")
     st.write("""Indice de fechas de las anomalias detectadas:""")
     st.write(q["Date"].loc[(q['Anomalias']> 0)])
-    if st.button("Simulación tiempo real"):
-        fig = px.bar(gr, x= "Gas", y= "Valor",color="Gas", 
-        color_discrete_map=colores, animation_frame= "Date", 
-        animation_group= "Gas")
-        fig.update_layout(width=800)
-        fig.update_yaxes(range=[0,(gr["Valor"].max().max())//3])
-        st.write(fig)
-        st.write("""Simulación de la recabación de los datos a traves de un periodo de tiempo.
-        El valor asignado a la anomalia es simbolico y solo sirve como representación de su existencia.""")
 
-        st.write("""Es importante mencionar que los parámetros de los modelos son modificables para lograr  
-        tener mayor o menor tolerancia al comportamiento, según sea la necesidad de cada caso.""")
+    fig = px.bar(gr, x= "Gas", y= "Valor",color="Gas", 
+    color_discrete_map=colores, animation_frame= "Date", 
+    animation_group= "Gas")
+    fig.update_layout(width=800)
+    fig.update_yaxes(range=[0,(gr["Valor"].max().max())//3])
+    st.write(fig)
+    st.write("""Simulación de la recabación de los datos a traves de un periodo de tiempo.
+    El valor asignado a la anomalia es simbolico y solo sirve como representación de su existencia.""")
 
-        st.write("""Si bien, en este ejemplo hablamos de gases dentro de un transformador, este procedimiento
-        puede es aplicable para la medición de gases en cualquier circunstancia siempre y cuando se tenga equipo 
-        con cual tomar y guardar mediciones en una base de datos para poderlos procesar.""")
+    st.write("""Es importante mencionar que los parámetros de los modelos son modificables para lograr  
+    tener mayor o menor tolerancia al comportamiento, según sea la necesidad de cada caso.""")
+
+    st.write("""Si bien, en este ejemplo hablamos de gases dentro de un transformador, este procedimiento
+    puede es aplicable para la medición de gases en cualquier circunstancia siempre y cuando se tenga equipo 
+    con cual tomar y guardar mediciones en una base de datos para poderlos procesar.""")
 
 st.write(""" ### Visualizador de variables seleccionadas""")
 
