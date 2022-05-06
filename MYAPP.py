@@ -138,17 +138,20 @@ if st.button("Comenzar"):
     Autoencoder para cuando se desea detectar anomalias en 2 o más gases y 
     Isolation Forest, cuando solamente se analiza un gas.""")
     
-    st.write("""## Autoencoder
+    if len(header) == 2:
+
+        st.write("""## Autoencoder
     
-    Los autoencoders son redes neuronales artificiales, entrenadas de manera no supervisada, 
-    que tienen como objetivo aprender primero las representaciones codificadas de nuestros datos 
-    y luego generar los datos de entrada a partir de las representaciones codificadas aprendidas.""")
+        Los autoencoders son redes neuronales artificiales, entrenadas de manera no supervisada, 
+        que tienen como objetivo aprender primero las representaciones codificadas de nuestros datos 
+        y luego generar los datos de entrada a partir de las representaciones codificadas aprendidas.""")
+    else:
 
-    st.write(""" ## Isolation Forest
+        st.write(""" ## Isolation Forest
 
-    En un bosque de aislamiento, los datos se submuestrean aleatoriamente, estos se procesan 
-    en una estructura de árbol basada en características seleccionadas aleatoriamente.
-    """)
+        En un bosque de aislamiento, los datos se submuestrean aleatoriamente, estos se procesan 
+        en una estructura de árbol basada en características seleccionadas aleatoriamente.
+        """)
     ######### Reproduccion tiempo real
     db = []
     p.drop([0],inplace=True, axis=1)
@@ -365,9 +368,7 @@ if st.button("Comenzar"):
     gr["Date"]=dat
     gr["Gas"]= gs
     gr["Valor"]= va
-    st.write(q)
-    st.write(gr)
-    #st.write[type(colores)]
+    st.write("# Simulación de tiempo real")
     if st.button("Simulación tiempo real"):
         fig = px.bar(gr, x= "Gas", y= "Valor",color="Gas", 
         color_discrete_map=colores, animation_frame= "Date", 
