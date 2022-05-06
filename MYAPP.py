@@ -124,7 +124,6 @@ if len(lista)> 0:
     q = p.copy()
     q.columns = header
     q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
-st.write(q)
 
 if st.button("Comenzar"):
 
@@ -351,3 +350,16 @@ if st.button("Comenzar"):
         fig.update_layout(width=800)
         fig.update_yaxes(range=[0,(gr["Valor"].max().max())//3])
         st.write(fig)
+
+st.write(""" # Visualizador de variables seleccionadas """)
+
+if st.checkbox('Visualizar base de datos seleccionada'):
+    headz = ["Date","Acetileno","Hidrogeno","Etileno","Monoxido de carbono","Etano","Metano"]
+    r = db.copy()
+    r.columns = headz
+    st.write(r)
+
+if st.checkbox('Visualizar variables seleccionadas'):
+    st.write(q)
+
+
