@@ -16,9 +16,9 @@ with st.sidebar:
      ('English', 'Español'))
 ##########################################################
 if option == "Español":
-    st.image('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/Geekr%20Miners%20ENG.png',width = 600 )
-else:
     st.image('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/Geekr%20Miners%20ESP.png',width = 600 )
+else:
+    st.image('https://raw.githubusercontent.com/IgnacioRodriguez98/Monitoreo-TR/main/Data/Geekr%20Miners%20ENG.png',width = 600 )
 if option == 'Español':    
     st.write(""" # Introducción
 
