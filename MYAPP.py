@@ -131,7 +131,7 @@ if len(lista)> 0:
     q.columns = header
     q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
 
-if st.button("Comenzar"):
+if st.markdown("Comenzar"):
     st.write("""# Modelos de Machine Learning
     Para la logra la detección de anomalias en esta app se hace uso de dos modelos de Machine Learning,
     **Autoencoder** para cuando se desea detectar anomalias en 2 o más gases y 
