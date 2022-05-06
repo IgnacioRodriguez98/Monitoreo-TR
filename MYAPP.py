@@ -108,21 +108,22 @@ else:
 
 #####################  ######################
 if option == "Español":
-    st.write("""# 1er Paso: Selección de base de datos
+    st.write("""# 1er Paso: Selección de base de datos""")
 
-    En la parte superior izquierda se encuentra una flecha, la cuál despliega un menú en la cuál deberá seleccionar
+    st.write("""En la parte superior izquierda se encuentra una flecha, la cuál despliega un menú en la cuál deberá seleccionar
     entre 3 bases de datos disponibles; Estas corresponden a una planta distinta y están ordenadas conforme a su número de datos.
 
     **Ojo: Tener en cuenta que mientras más grande sea la base de datos mayor será el tiempo de ejecución.** """)
 
-    st.write("""# 2nd Paso: Selección de gases
+    st.write("""# 2nd Paso: Selección de gases""")
 
-    En el mismo menú del paso anterior se encuentra el apartado "Gases", en donde encontrará checkbox para seleccionar los gases que monitorearemos..
+    st.write("""En el mismo menú del paso anterior se encuentra el apartado "Gases", en donde encontrará checkbox para seleccionar los gases que monitorearemos..
 
-    **Ojo: A mayor número de gases mayor será el tiempo de ejecución.**
+    **Ojo: A mayor número de gases mayor será el tiempo de ejecución.** """)
 
-    Una vez seleccionado la base de datos y los gases a analizar, podemos empezar haciendo clic en el 
-    ###### siguiente boton. """)
+    st.write("""Una vez seleccionado la base de datos y los gases a analizar, podemos empezar haciendo clic en el""")
+    st.write("""###### siguiente boton. """)
+    bt = "Comenzar"
 
 else:
     st.write("""# Second Step: Gas Selection""")
@@ -137,6 +138,7 @@ else:
      **Warning: The higher the number of gases, the longer the execution time will be.**""")
     st.write("""Once the database and the gases to be analyzed have been selected, we can start by clicking on the""")
     st.write(""" ###### next button. """)
+    bt = "Start"
 
 lista = []
 header = ["Date"]
@@ -180,7 +182,7 @@ if len(lista)> 0:
     q.columns = header
     q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
 
-if st.button("Comenzar"):
+if st.button(bt):
     st.write("""# Modelos de Machine Learning
     
     Para la logra la detección de anomalias en esta app se hace uso de dos modelos de Machine Learning,
