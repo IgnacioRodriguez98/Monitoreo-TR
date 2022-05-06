@@ -138,7 +138,7 @@ if st.button("Comenzar"):
     Autoencoder para cuando se desea detectar anomalias en 2 o más gases y 
     Isolation Forest, cuando solamente se analiza un gas.""")
     
-    if len(header) >= 2:
+    if len(header) > 2:
 
         st.write("## Autoencoder")
         st.write("""Los autoencoders son redes neuronales artificiales, entrenadas de manera no supervisada,que tienen como objetivo
