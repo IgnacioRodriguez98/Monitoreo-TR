@@ -189,7 +189,7 @@ if len(lista)> 0:
     q.columns = header
     q["Date"] = pd.to_datetime(q["Date"]).dt.strftime("%Y-%m-%d %H:%M:%S")
 ############################# Boton de Inicio #############################
-st.image('https://toppng.com/uploads/preview/arrow-red-arrow-pointing-dow-11563615945l2ppxcxsrt.png',width = 50)
+st.image('https://toppng.com/uploads/preview/arrow-red-arrow-pointing-dow-11563615945l2ppxcxsrt.png',width = 75)
 if st.button(bt):
         if option == "Español":
             st.write("""# Modelos de Machine Learning""")
