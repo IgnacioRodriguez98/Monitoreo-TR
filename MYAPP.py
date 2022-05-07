@@ -191,6 +191,11 @@ if len(lista)> 0:
 ############################# Boton de Inicio #############################
 st.image('https://toppng.com/uploads/preview/arrow-red-arrow-pointing-dow-11563615945l2ppxcxsrt.png',width = 65)
 if st.button(bt):
+    if len(lista) == 0:
+        if option == "Español":
+            st.write("# No seleccionó ni un solo gas para analizar, por favor seleccione al menos uno y vuelva a hacer clic en el boton para continuar")
+        else:
+            st.write("# You did not select any gas to be analyze, please select at least one and click the button again to continue")
         if option == "Español":
             st.write("""# Modelos de Machine Learning""")
             
