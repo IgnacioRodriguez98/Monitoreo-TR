@@ -138,12 +138,12 @@ else:
     st.write("""In the upper left partof the screen is an arrow, which displays a menu in which you must select
     between 3 available databases; These correspond to a different plant and are ordered according to their data number.
 
-    **Warning: Keep in mind that the larger the database, the longer the execution time will be.""")
+    Warning: Keep in mind that the larger the database, the longer the execution time will be.""")
 
     st.write("""# Second Step: Gas Selection""")
     st.write("""In the same menu as in the previous step, there is the "Gases" section, where you will find a checkbox to select the gases that we will monitor.
      
-     **Warning: The higher the number of gases, the longer the execution time will be.**""")
+    Warning: The higher the number of gases, the longer the execution time will be.""")
     st.write("""Once the database and the gases to be analyzed have been selected, we can start by clicking on the""")
     st.write(""" ###### next button. """)
     bt = "Start"
