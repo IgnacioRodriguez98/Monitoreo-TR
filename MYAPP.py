@@ -530,6 +530,7 @@ if st.button(bt):
         # visualization
 
         header.append("Anomalias")
+        heads.append("Anomalies")
         q["Anomalias"]=q["Anomalias"].replace(1, 0)
         q["Anomalias"]=q["Anomalias"].replace(-1, q[header[1:]].max().max())
         gs = []
@@ -538,20 +539,34 @@ if st.button(bt):
         co = 0
         c = ["#FEAF3E","#FBFE1D","#54FE1D","#1DBAFE","#0E5C7E","#885693","#E52323"]
         gr = pd.DataFrame()
-        for i in range(len(q)):
-            for k in range(len(header[1:])):
-                dat.append(q["Date"][i])
-            for k in header[1:]:
-                va.append(q[k][i])
-            for k in header[1:]:
-                gs.append(k)
-        #colors= c[:len(header)]
-        #colors.append("#E52323")
-        colores={}
-        for i in header[1:]:
-            colores[i]=c[co]
-            co += 1
-        colores["Anomalias"] = "#E52323" 
+        if option == "Español":
+            for i in range(len(q)):
+                for k in range(len(header[1:])):
+                    dat.append(q["Date"][i])
+                for k in header[1:]:
+                    va.append(q[k][i])
+                for k in header[1:]:
+                    gs.append(k)
+            colores={}
+            for i in header[1:]:
+                colores[i]=c[co]
+                co += 1
+        else:
+            for i in range(len(q)):
+                for k in range(len(heads[1:])):
+                    dat.append(q["Date"][i])
+                for k in heads[1:]:
+                    va.append(q[k][i])
+                for k in heads[1:]:
+                    gs.append(k)
+            colores={}
+            for i in heads[1:]:
+                colores[i]=c[co]
+                co += 1
+        if option == "Español":
+            colores["Anomalias"] = "#E52323"
+        else:
+            colores["Anomalies"] = "#E52323"
         gr["Date"]=dat
         gr["Gas"]= gs
         gr["Valor"]= va
