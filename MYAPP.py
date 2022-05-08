@@ -262,7 +262,7 @@ if st.button(bt):
         ############## Grafica
         db2 = db.copy()
         db2.columns= header[1:]
-        fig = px.line(db2)
+        fig = px.line(db2,x="Muestras",y="Valor",title="Comportamiento a través del tiempo")
         st.write(db)
         if option == "Español":
             st.write(""" ### Valores de los gases seleccionados a través del tiempo.""")
