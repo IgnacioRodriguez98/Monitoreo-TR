@@ -402,7 +402,10 @@ if st.button(bt):
                 #st.write(a)
                 ax.plot(CO.index, CO.iloc[:, [0]], color='black', label = 'Normal')
                 ax.scatter(a.index,a.iloc[:, [0]], color='red', label = 'Anomaly')
-                plt.title("Acetileno")
+                if option == "Español":
+                    plt.title("Acetileno")
+                else:
+                    plt.title("Acetylene")
                 plt.legend()
                 plt.show();
                 if option == "Español":
@@ -421,7 +424,10 @@ if st.button(bt):
                 #st.write(a)
                 ax.plot(CO.index, CO.iloc[:, [0]], color='black', label = 'Normal')
                 ax.scatter(a.index,a.iloc[:, [0]], color='red', label = 'Anomaly')
-                plt.title("Hidrogeno")
+                if option == "Español":
+                    plt.title("Hidrogeno")
+                else:
+                    plt.title("Hydrogen")
                 plt.legend()
                 plt.show();
                 if option == "Español":
@@ -440,7 +446,10 @@ if st.button(bt):
                 #st.write(a)
                 ax.plot(CO.index, CO.iloc[:, [0]], color='black', label = 'Normal')
                 ax.scatter(a.index,a.iloc[:, [0]], color='red', label = 'Anomaly')
-                plt.title("Etileno")
+                if option == "Español":
+                    plt.title("Etileno")
+                else:
+                    plt.title("Ethylene")
                 plt.legend()
                 plt.show();
                 if option == "Español":
@@ -459,7 +468,10 @@ if st.button(bt):
                 #st.write(a)
                 ax.plot(CO.index, CO.iloc[:, [0]], color='black', label = 'Normal')
                 ax.scatter(a.index,a.iloc[:, [0]], color='red', label = 'Anomaly')
-                plt.title("Monoxido de Carbono")
+                if option == "Español":
+                    plt.title("Monoxido de Carbono")
+                else:
+                    plt.title("Carbon Monoxide")
                 plt.legend()
                 plt.show();
                 if option == "Español":
@@ -478,7 +490,10 @@ if st.button(bt):
                 #st.write(a)
                 ax.plot(CO.index, CO.iloc[:, [0]], color='black', label = 'Normal')
                 ax.scatter(a.index,a.iloc[:, [0]], color='red', label = 'Anomaly')
-                plt.title("Etano")
+                if option == "Español":
+                    plt.title("Etano")
+                else:
+                    plt.title("Ethane")
                 plt.legend()
                 plt.show();
                 if option == "Español":
@@ -497,7 +512,10 @@ if st.button(bt):
                 #st.write(a)
                 ax.plot(CO.index, CO.iloc[:, [0]], color='black', label = 'Normal')
                 ax.scatter(a.index,a.iloc[:, [0]], color='red', label = 'Anomaly')
-                plt.title("Metano")
+                if option == "Español":
+                    plt.title("Metano")
+                else:
+                    plt.tiltle("Methane")
                 plt.legend()
                 plt.show();
                 if option == "Español":
