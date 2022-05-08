@@ -539,37 +539,31 @@ if st.button(bt):
         co = 0
         c = ["#FEAF3E","#FBFE1D","#54FE1D","#1DBAFE","#0E5C7E","#885693","#E52323"]
         gr = pd.DataFrame()
+        for i in range(len(q)):
+            for k in range(len(header[1:])):
+                dat.append(q["Date"][i])
+            for k in header[1:]:
+                va.append(q[k][i])
+            for k in header[1:]:
+                gs.append(k)
+        colores={}
         if option == "Español":
-            for i in range(len(q)):
-                for k in range(len(header[1:])):
-                    dat.append(q["Date"][i])
-                for k in header[1:]:
-                    va.append(q[k][i])
-                for k in header[1:]:
-                    gs.append(k)
-            colores={}
             for i in header[1:]:
                 colores[i]=c[co]
                 co += 1
+        
+            colores["Anomalias"] = "#E52323"
         else:
-            for i in range(len(q)):
-                for k in range(len(heads[1:])):
-                    dat.append(q["Date"][i])
-                for k in heads[1:]:
-                    va.append(q[k][i])
-                for k in heads[1:]:
-                    gs.append(k)
-            colores={}
             for i in heads[1:]:
                 colores[i]=c[co]
                 co += 1
-        if option == "Español":
-            colores["Anomalias"] = "#E52323"
-        else:
             colores["Anomalies"] = "#E52323"
         gr["Date"]=dat
         gr["Gas"]= gs
         gr["Valor"]= va
+        if option =="English":
+            for i in len(heads[1:]):
+                gr["Gas"]=q["Gas"].replace(header[i], heads[i])
         if option == "Español":
             st.write("# Simulación de detección de anomalias en tiempo real")
             st.write("""Fechas donde se detectaron anomalías:""")
