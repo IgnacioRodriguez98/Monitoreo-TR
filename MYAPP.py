@@ -515,7 +515,7 @@ if st.button(bt):
                 if option == "Español":
                     plt.title("Metano")
                 else:
-                    plt.tiltle("Methane")
+                    plt.title("Methane")
                 plt.legend()
                 plt.show();
                 if option == "Español":
