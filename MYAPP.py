@@ -618,6 +618,8 @@ else:
 
     if len(lista)> 0:
         if st.checkbox('Display selected variables'):
+            s = q.copy()
+            s.columns=heads
             st.write(q.drop(columns=['Date']))
 
 
