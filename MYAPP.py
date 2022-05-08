@@ -562,8 +562,13 @@ if st.button(bt):
         gr["Gas"]= gs
         gr["Valor"]= va
         if option =="English":
-            for i in len(heads[1:]):
-                gr["Gas"]=q["Gas"].replace(header[i], heads[i])
+            gr["Gas"]=q["Gas"].replace("Acetileno", "Acetylene")
+            gr["Gas"]=q["Gas"].replace("Hidrogeno", "Hydrogen")
+            gr["Gas"]=q["Gas"].replace("Etileno", "Ethylene")
+            gr["Gas"]=q["Gas"].replace("Monoxido de carbono", "Carbon Monoxide")
+            gr["Gas"]=q["Gas"].replace("Etano", "Ethane")
+            gr["Gas"]=q["Gas"].replace("Metano", "Methane")
+
         if option == "Español":
             st.write("# Simulación de detección de anomalias en tiempo real")
             st.write("""Fechas donde se detectaron anomalías:""")
