@@ -135,7 +135,7 @@ if option == "Español":
 else:
     st.write("""# First step: Database Selection""")
 
-    st.write("""In the upper left partof the screen is an arrow, which displays a menu in which you must select
+    st.write("""In the upper left part of the screen is an arrow, which displays a menu in which you must select
     between 3 available databases; These correspond to a different plant and are ordered according to their data number.
 
     Warning: Keep in mind that the larger the database, the longer the execution time will be.""")
@@ -261,6 +261,7 @@ if st.button(bt):
 
         ############## Grafica
         fig = px.line(db)
+        st.write(db)
         if option == "Español":
             st.write(""" ### Valores de los gases seleccionados a través del tiempo.""")
         else:
