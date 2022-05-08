@@ -260,7 +260,9 @@ if st.button(bt):
         db = pd.DataFrame(db)
 
         ############## Grafica
-        fig = px.line(db)
+        db2 = db.copy()
+        db2.columns= header[1:]
+        fig = px.line(db2)
         st.write(db)
         if option == "Español":
             st.write(""" ### Valores de los gases seleccionados a través del tiempo.""")
