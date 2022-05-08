@@ -150,37 +150,44 @@ else:
 
 lista = []
 header = ["Date"]
+heads = ["Date"]
 p= df[0]
 
 if C2H2:
     a = df[[0,1]]
     lista.append(a)
     header.append("Acetileno")
+    heads.append("Acetylene")
 
 if H2:
     b = df[[0,2]]
     lista.append(b)
     header.append("Hidrogeno")
+    heads.append("Hydrogen")
 
 if C2H4:
     c = df[[0,3]]
     lista.append(c)
     header.append("Etileno")
+    heads.append("Ethylene")
 
 if CO:
     d = df[[0,4]]
     lista.append(d)
     header.append("Monoxido de carbono")
+    heads.append("Carbon Monoxide")
 
 if C2H6:
     e = df[[0,5]]
     lista.append(e)
     header.append("Etano")
+    heads.append("Ethane")
 
 if CH4:
     f = df[[0,6]]
     lista.append(f)
     header.append("Metano")
+    heads.append("Methane")
 
 if len(lista)> 0:
 
@@ -261,9 +268,11 @@ if st.button(bt):
 
         ############## Grafica
         db2 = db.copy()
-        db2.columns= header[1:]
+        if option == "Español":
+            db2.columns= header[1:]
+        else:
+            db2.columns= heads[1:]
         fig = px.line(db2)
-        st.write(db)
         if option == "Español":
             st.write(""" ### Valores de los gases seleccionados a través del tiempo.""")
         else:
