@@ -620,7 +620,7 @@ else:
         if st.checkbox('Display selected variables'):
             s = q.copy()
             s.columns=heads
-            st.write(q.drop(columns=['Date']))
+            st.write(s.drop(columns=['Date']))
 
 
 
